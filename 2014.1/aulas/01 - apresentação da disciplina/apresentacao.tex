@@ -1,0 +1,393 @@
+ \documentclass[xcolor=dvipsnames,table]{beamer}
+%o
+%e
+
+\usepackage{latexsym}
+\usepackage [ansinew]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb} %Este e o AMS paquete
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{fancybox}
+\usepackage{datetime}
+
+\usepackage[T1]{fontenc}
+
+%\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{url}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{acronym}
+\usepackage{array}
+
+\newtheorem{definicao}{Definio}
+\newcommand{\tab}{\hspace*{2em}}
+
+\mode<presentation>
+{
+  %\definecolor{colortexto}{RGB}{153,100,0}
+  \definecolor{colortexto}{RGB}{0,0,0}
+  
+% \setbeamersize{sidebar width left=0.5cm}
+  \setbeamertemplate{background canvas}[vertical shading][ bottom=white!10,top=white!10]
+%   \setbeamercolor{title}{fg=colortitulo!80!black,bg=blue!20!white}
+%   \setbeamercolor{title}{bg=colortitulo!20!black}
+%   \setbeamercolor{background canvas}{bg=colortitulo}
+%   \setbeamercolor{frametitle}{fg=red}
+
+  \setbeamercolor{normal text}{fg=colortexto} 
+
+  \usetheme{Warsaw}
+  %\logo{\includegraphics[width=2cm]{Images/ratonfuerte.jpg}}
+
+
+%   \usefonttheme[onlysmall]{structurebold}
+%   \usecolortheme{seahorse}
+%  \usecolortheme[named={YellowOrange}]{structure}
+%   \usecolortheme[named={Blue}]{structure}
+%   \usecolortheme{crane}
+%   \useoutertheme{default}
+}
+\setbeamertemplate{caption}[numbered]
+
+\title{Teste Apresentação da Disciplina} 
+
+\author{
+  Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
+  } 
+ \institute{
+  Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
+\date{\textbf{11 de março de 2014} }
+
+\logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\AtBeginSection{
+		\begin{frame}{Sumário}%[allowframebreaks]{Sumário}
+    		\tableofcontents[currentsection]
+    		%\tableofcontents[currentsection, hideothersubsections]
+		\end{frame}
+	}
+
+	\begin{frame}{Plano de Aula}
+		\tableofcontents
+		%\tableofcontents[hideallsubsections]
+	\end{frame}
+	
+	\section{Sobre a Disciplina}
+	\subsection{Professor}
+	\begin{frame}{Professor}
+		\begin{columns}
+			\column{.4\textwidth}  		
+		  		\begin{center}
+		    		\includegraphics[height=.5\textheight]{images/esdras.png}
+		  		\end{center}
+			\column{.6 \textwidth}  		
+				\begin{block}{Formação}
+					\begin{center}
+						{\normalsize {\bf Bacharel} em Sistemas de Informação\\
+						{\bf Mestre} e {\bf Doutorando} em Representação Conhecimento (IA)}
+					\end{center}
+				\end{block}		  		
+		  		\begin{block}{Quem?}
+		  			\begin{center}
+						{\bf Esdras Lins Bispo Junior} \\ Recife, Pernambuco.
+					\end{center}
+				\end{block}
+		\end{columns}
+	\end{frame}
+	
+	\subsection{Informações Importantes}
+	\begin{frame}{Informações Importantes}
+		\begin{block}{Professor}
+			\begin{itemize}
+				\item Esdras Lins Bispo Jr.
+				\item \url{bispojr@ufg.com}
+				\item Sala 17B (Bloco dos Professores)
+			\end{itemize}
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Informações Importantes}
+		\begin{block}{Disciplina}
+			\begin{itemize}
+				\item Lógica para Ciência da Computação
+				\item 17h20-19h00 (Terça, LEC III)\\
+					  15h30-17h10 (Quinta, Sala 11 CA 1)
+				\item Dúvidas: 17h20 - 19h00 (Quinta) \\
+					  {\color{red} [necessário confirmação comigo]}
+				\item \url{logica.bispojr.com} (AVA Canvas).
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Informações Importantes}
+		\begin{block}{Metodologia}
+			\begin{itemize}
+				\item Aulas expositivas;
+				\item Provas;
+				\item Testes;
+				\item Exercícios.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Informações Importantes}
+		\begin{block}{Testes}
+			\begin{itemize}
+				\item Primeiro teste equivale a 20\% da pontuação total;
+				\item Segundo teste equivale a 10\% da pontuação total.
+			\end{itemize}
+		\end{block}
+		\begin{block}{Provas}
+			\begin{itemize}
+				\item Primeiro teste equivale a 40\% da pontuação total;
+				\item Segundo teste equivale a 30\% da pontuação total.
+			\end{itemize}
+		\end{block}
+		\begin{block}{Exercícios [Bônus]}
+			\begin{itemize}
+				\item Somatório de todos os exercícios equivale a \\10\% da pontuação total.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Informações Importantes}
+		\begin{block}{Avaliação}
+			O cálculo da média final será dada da seguinte forma:
+			\begin{itemize}
+				\item MF = MIN(10, PONT)
+			\end{itemize}
+			em que MIN representa o mínimo entre dois valores e PONT representa a pontuação total obtida em toda a disciplina.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Informações Importantes}
+		\begin{block}{Reposições de Aula}
+			{\bf Dia:} Quinta-feira (17h20-19h00)
+		\end{block}
+		\begin{block}{Datas}
+			\begin{enumerate}
+				\item 20 de março;
+				\item 03 de abril;
+				\item 24 de abril;
+				\item 15 de maio;
+				\item 29 de maio.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Informações Importantes}
+		\begin{alertblock}{Não haverá aula}
+			\begin{enumerate}
+				\item 17 de abril;
+				\item 01 de maio;
+				\item 06 de maio;
+				\item 08 de maio;
+				\item 12 de junho;
+				\item 17 de junho;
+				\item 19 de junho.
+			\end{enumerate}
+		\end{alertblock} \pause
+		\begin{exampleblock}{Previsão de Término das Atividades}
+			03 de julho.
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}{Informações Importantes}
+		\begin{block}{Conteúdo do Curso}
+			\begin{enumerate}
+				\item Lógica Proposicional;
+				\item Semântica da Lógica Proposicional;
+				\item Construção de Tabelas-Verdade;
+				\item Implicação Lógica e Argumento;
+				\item Demonstração e Dedução;
+				\item Satisfazibilidade;
+				\item Lógica de Predicados;
+				\item Programação Lógica.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+
+%------------------------------------------
+	\section{Pensamento}
+	\begin{frame}{Pensamento}
+  		\begin{center}
+    		\includegraphics[width=7cm]{images/pensamento.png}
+  		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Pensamento}
+		\begin{columns}
+			\column{.4\textwidth}  		
+		  		\begin{center}
+		    		\includegraphics[height=.7\textheight]{images/gerson.jpg}
+		  		\end{center}
+			\column{.6\textwidth}  		
+				\begin{block}{Frase}
+					\begin{center}
+						{\large Gosto de levar vantagem em tudo, certo?}
+					\end{center}
+				\end{block}		  		
+		  		\begin{block}{Quem?}
+		  			\begin{center}
+						{\bf Gérson Nunes (1941-)} \\ Jogador de futebol da \\seleção brasileira de 1970.
+					\end{center}
+				\end{block}
+		\end{columns}
+	\end{frame}
+%------------------------------------------
+	\section{Pra quê serve a Lógica}
+	\begin{frame}{Pra quê serve a Lógica}
+		\begin{figure}
+			\centering
+    		\includegraphics[height=.7\textheight]{images/google.png}
+    		\caption{Criação de mecanismos de buscas.}
+    	\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Pra quê serve a Lógica}
+		\begin{figure}
+			\centering
+    		\includegraphics[height=.7\textheight]{images/intel.png}
+    		\caption{Desenvolvimento de processadores.}
+    	\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Pra quê serve a Lógica}
+		\begin{figure}
+			\centering
+    		\includegraphics[height=.7\textheight]{images/robo.png}
+    		\caption{Programas em Robótica.}
+    	\end{figure}
+	\end{frame}
+	
+	\begin{frame}{Pra quê serve a Lógica}
+		\begin{figure}
+			\centering
+    		\includegraphics[height=.7\textheight]{images/kr.png}
+    		\caption{Representação do Conhecimento.}
+    	\end{figure}
+	\end{frame}
+	
+	\section{Linguagem Proposicional}
+	\subsection{Proposição}
+	\begin{frame}{Linguagem Proposicional}
+		\begin{block}{Proposição}
+			É uma sentença declarativa que pode ser julgada como verdadeira ou falsa.
+		\end{block} \pause
+		\begin{block}{Exemplos}
+			\begin{itemize}
+				\item Dez é menor do que sete. \pause {\color{blue} $\checkmark$} \pause
+				\item Como está você? \pause {\color{red} $\times$} \pause
+				\item Como ela é talentosa! \pause {\color{red} $\times$} \pause
+				\item Existe vida em outros planetas do universo. \pause {\color{blue} $\checkmark$}
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\subsection{Conectivos}
+	\begin{frame}{Linguagem Proposicional}
+		\begin{block}{Conectivos}
+			São operadores lógicos que conectam proposições gerando como resultado novas proposições.
+		\end{block} \pause
+		\begin{block}{Exemplos}
+			\begin{itemize}
+				\item $p$ = ``Dez é menor do que sete''.
+				\item $q$ = ``Existe vida em outros planetas do universo''.
+			\end{itemize}
+		\end{block} \pause
+		\begin{block}{Conjunção}
+			\begin{tabular}{rl}						
+				$p \wedge q$ = & ``Dez é menor do que sete {\color{blue} \bf e} \\
+				               & existe vida em outros planetas do universo''.\\
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Linguagem Proposicional}
+		\begin{block}{Conectivos}
+			São operadores lógicos que conectam proposições gerando como resultado novas proposições.
+		\end{block}
+		\begin{block}{Exemplos}
+			\begin{itemize}
+				\item $p$ = ``Dez é menor do que sete''.
+				\item $q$ = ``Existe vida em outros planetas do universo''.
+			\end{itemize}
+		\end{block}
+		\begin{block}{Disjunção}
+			\begin{tabular}{rl}						
+				$p \vee q$ = & ``Dez é menor do que sete {\color{blue} \bf ou} \\
+				               & existe vida em outros planetas do universo''.\\
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Linguagem Proposicional}
+		\begin{block}{Conectivos}
+			São operadores lógicos que conectam proposições gerando como resultado novas proposições.
+		\end{block}
+		\begin{block}{Exemplos}
+			\begin{itemize}
+				\item $p$ = ``Dez é menor do que sete''.
+				\item $q$ = ``Existe vida em outros planetas do universo''.
+			\end{itemize}
+		\end{block}
+		\begin{block}{Condicional}
+			\begin{tabular}{rl}						
+				$p \rightarrow q$ = & ``{\color{blue} \bf Se} dez é menor do que sete \\
+				               & {\color{blue} \bf então} existe vida em outros planetas do universo''.\\
+			\end{tabular}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Linguagem Proposicional}
+		\begin{block}{Conectivos}
+			São operadores lógicos que conectam proposições gerando como resultado novas proposições.
+		\end{block}
+		\begin{block}{Exemplos}
+			\begin{itemize}
+				\item $p$ = ``Dez é menor do que sete''.
+				\item $q$ = ``Existe vida em outros planetas do universo''.
+			\end{itemize}
+		\end{block}
+		\begin{block}{Negação}
+			\begin{tabular}{rl}						
+				$\neg p$ = & ``Dez {\color{blue} \bf não} é menor do que sete''. \\ \pause
+				$\neg q$ = & ``{\color{blue} \bf Não} existe vida em outros planetas do universo''.\\
+			\end{tabular}
+		\end{block}
+	\end{frame}	
+	
+	\subsection{Alfabeto}
+	\begin{frame}{Alfabeto}
+		\begin{block}{Alfabeto}
+			\begin{itemize}
+				\item<1,5> Um conjunto infinito e contável de {\it símbolos proposicionais}, também chamados de {\it átomos}, ou de {\it variáveis proposicionais}: $\mathcal{P} = \{p_0, p_1, p_2, ...\}$.
+				\item<2,5> O {\it conectivo unário} $\neg$ (negação, lê-se: NÃO).
+				\item<3,5> Os {\it conectivos binários} $\wedge$ (conjunção, lê-se: E), $\vee$ (disjunção, lê-se: OU), e $\rightarrow$ (implicação, lê-se: SE... ENTÃO...).
+				\item<4,5> Os elementos de pontuação, que contêm apenas os parênteses '(' e ')'.
+			\end{itemize}
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Onde estudar mais...}
+		\begin{block}{Livro}
+			SILVA, F. S. C. Da; FINGER, M.; MELO, A. C. V. de. 
+			\\Seção 1.2: A Linguagem Proposicional. 
+			\\Em {\bf Lógica para Computação}. \\São Paulo: Thomson Learning, 2006. \\ \color{blue}{\bf Código Bib.: [519.687 SIL /log]}.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+\end{document}
