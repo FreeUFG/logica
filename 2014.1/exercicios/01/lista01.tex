@@ -1,0 +1,97 @@
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\author{\\Universidade Federal de Goiás (UFG) \\Lógica para Ciência da Computação \\Esdras Lins Bispo Jr.}
+
+\title{\sc \huge Lista de Exercícios 1}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+	\item Quais das frases a seguir são proposições?
+
+		\begin{enumerate}
+			\item A lua é feita de queijo verde.
+			\item Ele é um homem alto.
+			\item Dois é um número primo.
+			\item O jogo terminará logo?
+			\item As taxas do ano que vem serão maiores.
+			\item As taxas do ano que vem serão menores.
+			\item $x - 4 = 0$
+		\end{enumerate}
+	
+	\item Simplifique as seguintes fórmulas, removendo os parênteses que não são obrigatórios:
+
+		\begin{enumerate}
+			\item $(p \vee q)$
+			\item $((p \vee q) \vee (r \vee s))$
+			\item $(p \rightarrow (q \rightarrow (p \wedge q)))$
+			\item $\neg (p \vee (q \wedge r))$
+			\item $\neg (p \wedge (q \vee r))$
+			\item $((p \wedge (p \rightarrow q)) \rightarrow q)$
+		\end{enumerate}
+		
+	\item Adicione os parênteses às seguintes fórmulas para que fiquem de acordo com as regras de formação de fórmulas:
+	
+		\begin{enumerate}
+			\item $\neg p \rightarrow q$
+			\item $p \wedge \neg q \wedge r \wedge \neg s$
+			\item $p \rightarrow q \rightarrow r \rightarrow p \wedge q \wedge r$
+			\item $p \wedge \neg q \vee r \wedge s$
+			\item $p \wedge \neg (p \rightarrow \neg q) \vee \neg q$
+		\end{enumerate}
+	
+	\item Dar o conjunto de subfórmulas das fórmulas a seguir (notar que os parênteses implícitos sao fundamentais para decidir quais são as subfórmulas):	
+	
+		\begin{enumerate}
+			\item $\neg p \rightarrow p$
+			\item $p \wedge \neg q \wedge r \wedge \neg s$ 
+			\item $p \rightarrow q \rightarrow r \rightarrow p \wedge q \wedge r$
+			\item $p \wedge \neg q \vee r \wedge s$
+			\item $p \wedge \neg (p \rightarrow \neg q) \vee \neg q$
+		\end{enumerate}
+		
+	\item Calcular a complexidade de cada fórmula do exercício anterior (notar que a posição exata dos parênteses {\it não influencia} a complexidade da fórmula).
+	
+	\item Definir por indução sobre a estrutura de fórmulas a função {\it átomos}($A$), que retorna o conjunto de todos os átomos que ocorrem na fórmula $A$. Por exemplo, {\it átomos}($p \wedge \neg (p \rightarrow \neg q) \vee \neg q) = \{p,q\}$.
+	
+%	\item Baseado nos símbolos proposicionais que estão no {\it slide} 15 da Aula 04 (24 de abril), expressar os seguintes fatos com fórmulas da lógica proposicional.
+%	
+%		\begin{enumerate}
+%			\item Uma criança não é um jovem.
+%			\item Uma criança não é jovem, nem adulto, nem idoso.
+%			\item Se um adulto é trabalhador, então ele não está aposentado.
+%			\item Para ser aposentado, a pessoa deve ser um adulto ou um idoso.
+%			\item Para ser estudante, a pessoa deve ser ou um idoso aposentado, ou um adulto trabalhador ou um jovem ou uma criança.
+%		\end{enumerate}
+		
+%	\item Sejam $p$, $q$ e $r$ as seguinte sentenças:
+%
+%		\begin{itemize}
+%			\item[$p$:] Rosas são vermelhas.
+%			\item[$q$:] Violetas são azuis.
+%			\item[$r$:] Açúcar é doce.
+%		\end{itemize}
+%	
+%	Traduza as seguintes sentenças compostas para notação simbólica:
+%	
+%		\begin{enumerate}
+%			\item Rosas são vermelhas e violetas são azuis.
+%			\item Rosas são vermelhas e; violetas são azuis ou açúcar é doce.
+%			\item Sempre que violetas são azuis, as rosas são vermelhas e o açúcar é doce.
+%			\item Rosas são vermelhas apenas se as violetas não forem azuis e se o açúcar for azedo.
+%			\item Rosas são vermelhas e, se o açúcar for azedo, então as violetas não são azuis ou o açúcar é doce.
+%		\end{enumerate}
+	
+\end{enumerate}
+
+\end{document}

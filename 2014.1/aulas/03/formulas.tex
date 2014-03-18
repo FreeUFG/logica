@@ -29,14 +29,14 @@
 }
 \setbeamertemplate{caption}[numbered]
 
-\title{Fórmulas} 
+\title{Fórmulas da Lógica Proposicional} 
 
 \author{
   Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
   } 
  \institute{
   Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
-\date{\textbf{13 de março de 2014} }
+\date{\textbf{18 de março de 2014} }
 
 \logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
 
@@ -70,17 +70,17 @@
 		\begin{columns}
 			\column{.4\textwidth}  		
 		  		\begin{center}
-		    		\includegraphics[width=.9\textwidth]{images/einstein.jpg}
+		    		\includegraphics[height=.8\textheight]{images/mark.jpg}
 		  		\end{center}
 			\column{.6\textwidth}  		
 				\begin{block}{Frase}
 					\begin{center}
-						{\large Se $A$ é o sucesso, então $A =X + Y + Z$. \\O trabalho é $X$; \\$Y$ é o lazer; e \\$Z$ é manter a boca fechada.}
+						{\large A gente não se liberta de um hábito atirando-o pela janela: é preciso fazê-lo descer a escada, degrau por degrau.}
 					\end{center}
 				\end{block}		  		
 		  		\begin{block}{Quem?}
 		  			\begin{center}
-						{\bf Albert Einstein  (1879 - 1955)}: \\Físico teórico alemão.
+						{\bf Mark Twain (1835 - 1910)} \\Escritor e humorista estadunidense
 					\end{center}
 				\end{block}
 		\end{columns}
@@ -111,79 +111,6 @@
 	\end{frame}
 %------------------------------------------
 	\section{Revisão}	
-	\subsection{Conectivos}
-	\begin{frame}{Linguagem Proposicional}
-		\begin{block}{Conectivos}
-			São operadores lógicos que conectam proposições gerando como resultado novas proposições.
-		\end{block}
-		\begin{block}{Exemplos}
-			\begin{itemize}
-				\item $p$ = ``Dez é menor do que sete''.
-				\item $q$ = ``Existe vida em outros planetas do universo''.
-			\end{itemize}
-		\end{block}
-		\begin{block}{Conjunção}
-			\begin{tabular}{rl}						
-				$p \wedge q$ = & ``Dez é menor do que sete {\color{blue} \bf e} \\
-				               & existe vida em outros planetas do universo''.\\
-			\end{tabular}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Linguagem Proposicional}
-		\begin{block}{Conectivos}
-			São operadores lógicos que conectam proposições gerando como resultado novas proposições.
-		\end{block}
-		\begin{block}{Exemplos}
-			\begin{itemize}
-				\item $p$ = ``Dez é menor do que sete''.
-				\item $q$ = ``Existe vida em outros planetas do universo''.
-			\end{itemize}
-		\end{block}
-		\begin{block}{Disjunção}
-			\begin{tabular}{rl}						
-				$p \vee q$ = & ``Dez é menor do que sete {\color{blue} \bf ou} \\
-				               & existe vida em outros planetas do universo''.\\
-			\end{tabular}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Linguagem Proposicional}
-		\begin{block}{Conectivos}
-			São operadores lógicos que conectam proposições gerando como resultado novas proposições.
-		\end{block}
-		\begin{block}{Exemplos}
-			\begin{itemize}
-				\item $p$ = ``Dez é menor do que sete''.
-				\item $q$ = ``Existe vida em outros planetas do universo''.
-			\end{itemize}
-		\end{block}
-		\begin{block}{Condicional}
-			\begin{tabular}{rl}						
-				$p \rightarrow q$ = & ``{\color{blue} \bf Se} dez é menor do que sete \\
-				               & {\color{blue} \bf então} existe vida em outros planetas do universo''.\\
-			\end{tabular}
-		\end{block}
-	\end{frame}
-	
-	\begin{frame}{Linguagem Proposicional}
-		\begin{block}{Conectivos}
-			São operadores lógicos que conectam proposições gerando como resultado novas proposições.
-		\end{block}
-		\begin{block}{Exemplos}
-			\begin{itemize}
-				\item $p$ = ``Dez é menor do que sete''.
-				\item $q$ = ``Existe vida em outros planetas do universo''.
-			\end{itemize}
-		\end{block}
-		\begin{block}{Negação}
-			\begin{tabular}{rl}						
-				$\neg p$ = & ``Dez {\color{blue} \bf não} é menor do que sete''. \\ \pause
-				$\neg q$ = & ``{\color{blue} \bf Não} existe vida em outros planetas do universo''.\\
-			\end{tabular}
-		\end{block}
-	\end{frame}	
-	
 	\subsection{Alfabeto}
 	\begin{frame}{Alfabeto}
 		\begin{block}{Alfabeto}
@@ -203,7 +130,7 @@
 			\begin{enumerate}
 				\item {\bf Caso básico:} Todos os símbolos proposicionais que estão em $\mathcal{L}_{LP}$; ou seja, $\mathcal{P} \subseteq \mathcal{L}_{LP}$. Os símbolos proposicionais são chamados de {\it fórmulas atômicas}, ou átomos.
 				\item {\bf Caso indutivo 1:} Se $A \in \mathcal{L}_{LP}$, então $(\neg A) \in \mathcal{L}_{LP}$.
-				\item {\bf Caso indutivo 2:} Se $A, B \in \mathcal{L}_{LP}$, então \\$(A \wedge B) \in \mathcal{L}_{LP}$, $(A \vee B) \in \mathcal{L}_{LP}$, e $(A \rightarrow B) \in \mathcal{L}_{LP}$.
+				\item<2> {\bf Caso indutivo 2:} Se $A, B \in \mathcal{L}_{LP}$, então \\$(A \wedge B) \in \mathcal{L}_{LP}$, $(A \vee B) \in \mathcal{L}_{LP}$, e $(A \rightarrow B) \in \mathcal{L}_{LP}$.
 			\end{enumerate}
 		\end{block}
 	\end{frame}
@@ -223,74 +150,74 @@
 		\end{block}
 	\end{frame}
 	
-%	\subsection{Ordem de precedência}
-%	\begin{frame}{Ordem de precedência}
-%			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
-%		\begin{block}{}
-%			Os parênteses mais externos de uma fórmula podem ser omitidos.\pause
-%			\begin{itemize}
-%				\item<3,6> $\neg r \equiv (\neg r)$
-%				\item<4,6> $p \wedge q \equiv (p \wedge q)$
-%				\item<5,6> $(r \wedge \neg q) \rightarrow \neg p \equiv ((r \wedge \neg q) \rightarrow \neg p)$
-%			\end{itemize}
-%		\end{block}
-%	\end{frame}
-%	
-%	\begin{frame}{Ordem de precedência}
-%			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
-%		\begin{block}{}
-%			O uso repetido dos conectivos $\wedge$ e $\vee$ dispensa o uso dos parênteses. \pause
-%			
-%			\begin{itemize}
-%				\item<3,5,6> $p \wedge q \wedge \neg r \wedge \neg s \equiv ((p \wedge q) \wedge \neg r) \wedge \neg s$
-%				\item<4,5,6> $r \vee s \wedge \neg t \vee p \equiv ((r \vee s) \wedge \neg t) \vee p$
-%			\end{itemize}
-%		\end{block}
-%		
-%		\onslide<6>{ 
-%		\begin{alertblock}{Observação}
-%			Note que os parênteses aninham-se {\bf à esquerda}.
-%		\end{alertblock}
-%		}
-%	\end{frame}
-%	
-%	\begin{frame}{Ordem de precedência}
-%			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
-%		\begin{block}{}
-%			O uso repetido do conectivo $\rightarrow$ também dispensa o uso dos parênteses. \pause
-%			
-%			\begin{itemize}
-%				\item<3,5,6> $p \rightarrow q \rightarrow \neg r \equiv p \rightarrow (q \rightarrow \neg r)$
-%				\item<4,5,6> $r \rightarrow \neg s \rightarrow \neg t \equiv r \rightarrow (\neg s \rightarrow \neg t)$
-%			\end{itemize}
-%		\end{block}
-%		
-%		\onslide<6>{ 
-%		\begin{alertblock}{Observação}
-%			Note que os parênteses aninham-se {\bf à direita}.
-%		\end{alertblock}
-%		}
-%	\end{frame}
-%	
-%	\begin{frame}{Ordem de precedência}
-%			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
-%		\begin{block}{}
-%			Quando houver uma combinação de conectivos, existe uma precedência entre eles, dada pela ordem: $\neg, \wedge, \vee, \rightarrow$. \pause
-%			
-%			\begin{itemize}
-%				\item<3,6> $\neg p \wedge q \equiv ((\neg p) \wedge q)$
-%				\item<4,6> $p \vee q \wedge r \equiv p \vee (q \wedge r)$
-%				\item<5,6> $p \vee \neg q \rightarrow r \equiv (p \vee (\neg q)) \rightarrow r$
-%			\end{itemize}
-%		\end{block}
-%	\end{frame}
-%	
-%	\begin{frame}{Ordem de precedência}
-%			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
-%		\begin{alertblock}{Recomendação}
-%			Em geral, deve-se preferir clareza à economia de parênteses e, na dúvida, é bom deixar alguns parênteses para explicitar o sentido da fórmula.
-%		\end{alertblock}
-%	\end{frame}
+	\subsection{Ordem de precedência}
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{block}{}
+			Os parênteses mais externos de uma fórmula podem ser omitidos.\pause
+			\begin{itemize}
+				\item<3,6> $\neg r \equiv (\neg r)$
+				\item<4,6> $p \wedge q \equiv (p \wedge q)$
+				\item<5,6> $(r \wedge \neg q) \rightarrow \neg p \equiv ((r \wedge \neg q) \rightarrow \neg p)$
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{block}{}
+			O uso repetido dos conectivos $\wedge$ e $\vee$ dispensa o uso dos parênteses. \pause
+			
+			\begin{itemize}
+				\item<3,5,6> $p \wedge q \wedge \neg r \wedge \neg s \equiv ((p \wedge q) \wedge \neg r) \wedge \neg s$
+				\item<4,5,6> $r \vee s \wedge \neg t \vee p \equiv ((r \vee s) \wedge \neg t) \vee p$
+			\end{itemize}
+		\end{block}
+		
+		\onslide<6>{ 
+		\begin{alertblock}{Observação}
+			Note que os parênteses aninham-se {\bf à esquerda}.
+		\end{alertblock}
+		}
+	\end{frame}
+	
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{block}{}
+			O uso repetido do conectivo $\rightarrow$ também dispensa o uso dos parênteses. \pause
+			
+			\begin{itemize}
+				\item<3,5,6> $p \rightarrow q \rightarrow \neg r \equiv p \rightarrow (q \rightarrow \neg r)$
+				\item<4,5,6> $r \rightarrow \neg s \rightarrow \neg t \equiv r \rightarrow (\neg s \rightarrow \neg t)$
+			\end{itemize}
+		\end{block}
+		
+		\onslide<6>{ 
+		\begin{alertblock}{Observação}
+			Note que os parênteses aninham-se {\bf à direita}.
+		\end{alertblock}
+		}
+	\end{frame}
+	
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{block}{}
+			Quando houver uma combinação de conectivos, existe uma precedência entre eles, dada pela ordem: $\neg, \wedge, \vee, \rightarrow$. \pause
+			
+			\begin{itemize}
+				\item<3,6> $\neg p \wedge q \equiv ((\neg p) \wedge q)$
+				\item<4,6> $p \vee q \wedge r \equiv p \vee (q \wedge r)$
+				\item<5,6> $p \vee \neg q \rightarrow r \equiv (p \vee (\neg q)) \rightarrow r$
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{alertblock}{Recomendação}
+			Em geral, deve-se preferir clareza à economia de parênteses e, na dúvida, é bom deixar alguns parênteses para explicitar o sentido da fórmula.
+		\end{alertblock}
+	\end{frame}
 	
 	\begin{frame}{Onde estudar mais...}
 		\begin{block}{Seção 1.2: A Linguagem Proposicional}
