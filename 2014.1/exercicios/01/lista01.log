@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.4.16)  25 APR 2013 11:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.7)  18 MAR 2014 14:20
 entering extended mode
 **lista01.tex
 
-(C:\Users\Esdras\Dropbox\UFG\Disciplinas\2013.1\Lógica\Exercício\01\lista01.t
-ex
+("E:\Dropbox\UFG\Disciplinas\Lógica para Ciência da Computação\2014.1\exerc
+icios\01\lista01.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -343,8 +343,8 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-(C:\Users\Esdras\Dropbox\UFG\Disciplinas\2013.1\Lógica\Exercício\01\lista01.a
-ux)
+("E:\Dropbox\UFG\Disciplinas\Lógica para Ciência da Computação\2014.1\exerc
+icios\01\lista01.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
@@ -362,33 +362,32 @@ LaTeX Font Info:    Try loading font information for U+msa on input line 16.
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 16.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-(C:\Users\Esdras\Dropbox\UFG\Disciplinas\2013.1\Lógica\Exercício\01\lista01.a
-ux) ) 
+("E:\Dropbox\UFG\Disciplinas\Lógica para Ciência da Computação\2014.1\exerc
+icios\01\lista01.aux") ) 
 Here is how much of TeX's memory you used:
  1882 strings out of 493921
- 20446 string characters out of 3147279
+ 20565 string characters out of 3147279
  73141 words of memory out of 3000000
  5178 multiletter control sequences out of 15000+200000
  15226 words of font info for 49 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  27i,6n,24p,281b,262s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Esdras\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\ecti1200.pk> <C:\Users\Esdras\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jkna
-ppen\ec\dpi600\ecrm1200.pk> <C:\Users\Esdras\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Esdras\AppData\Local\MiKTeX\2.
-9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb>
-Output written on lista01.pdf (2 pages, 77773 bytes).
+ <C:\Users\Esdras\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Esdras\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Esdras\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\Esdras\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc2488.pk><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on lista01.pdf (2 pages, 77394 bytes).
 PDF statistics:
- 157 PDF objects out of 1000 (max. 8388607)
+ 156 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
