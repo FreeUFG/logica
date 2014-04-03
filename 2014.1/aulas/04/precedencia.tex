@@ -1,0 +1,212 @@
+\documentclass[xcolor=dvipsnames,table]{beamer}
+ 
+\usepackage{latexsym}
+\usepackage [ansinew]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{fancybox}
+\usepackage{datetime}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{url}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{acronym}
+\usepackage{array}
+
+\newtheorem{definicao}{Definio}
+\newcommand{\tab}{\hspace*{2em}}
+
+\mode<presentation>
+{
+  \definecolor{colortexto}{RGB}{0,0,0}
+  \setbeamertemplate{background canvas}[vertical shading][ bottom=white!10,top=white!10]
+  \setbeamercolor{normal text}{fg=colortexto}
+  \usetheme{Warsaw}
+}
+\setbeamertemplate{caption}[numbered]
+
+\title{Ordem de Precedência} 
+
+\author{
+  Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
+  } 
+ \institute{
+  Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
+\date{\textbf{03 de abril de 2014} }
+
+\logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\AtBeginSection{
+		\begin{frame}{Sumário}%[allowframebreaks]{Sumário}
+    		\tableofcontents[currentsection]
+    		%\tableofcontents[currentsection, hideothersubsections]
+		\end{frame}
+	}
+
+	\begin{frame}{Plano de Aula}
+		\tableofcontents
+		%\tableofcontents[hideallsubsections]
+	\end{frame}
+
+%------------------------------------------
+	\section{Pensamento}
+	\begin{frame}{Pensamento}
+  		\begin{center}
+    		\includegraphics[width=7cm]{images/pensamento.png}
+  		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Pensamento}
+		\begin{columns}
+			\column{.4\textwidth}  		
+		  		\begin{center}
+		    		\includegraphics[height=.5\textheight]{images/platao.jpg}
+		  		\end{center}
+			\column{.6\textwidth}  		
+				\begin{block}{Frase}
+					\begin{center}
+						{\large O preço a pagar pela tua não participação na política é seres governado por quem é inferior.}
+					\end{center}
+				\end{block}		  		
+		  		\begin{block}{Quem?}
+		  			\begin{center}
+						{\bf Platão (428 a.C. - 347 a.C.)} \\Filósofo e matemático grego.
+					\end{center}
+				\end{block}
+		\end{columns}
+	\end{frame}
+	
+	\section{Avisos}
+	\begin{frame}{Avisos}
+		\begin{alertblock}{Questão Avaliada 01 no Canvas}
+			É necessária a avaliação pelos pares!
+		\end{alertblock}
+		\begin{center}
+			\includegraphics[width=\textwidth]{images/canvas.png}
+		\end{center}
+	\end{frame}
+		
+	\begin{frame}{Notícias do Santa Cruz}
+		\begin{center}
+			\includegraphics[width=\textwidth]{images/santa.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------
+	\section{Revisão}	
+	\subsection{Fórmulas da LP}
+	\begin{frame}{Fórmulas da LP}
+		\begin{block}{Fórmulas da LP}
+			O conjunto $\mathcal{L}_{LP}$ das fórmulas proposicionais é definido indutivamente como o menor conjunto, satisfazendo as seguinte regras de formação:
+			\begin{enumerate}
+				\item {\bf Caso básico:} Todos os símbolos proposicionais que estão em $\mathcal{L}_{LP}$; ou seja, $\mathcal{P} \subseteq \mathcal{L}_{LP}$. Os símbolos proposicionais são chamados de {\it fórmulas atômicas}, ou átomos.
+				\item {\bf Caso indutivo 1:} Se $A \in \mathcal{L}_{LP}$, então $(\neg A) \in \mathcal{L}_{LP}$.
+				\item {\bf Caso indutivo 2:} Se $A, B \in \mathcal{L}_{LP}$, então \\$(A \wedge B) \in \mathcal{L}_{LP}$, $(A \vee B) \in \mathcal{L}_{LP}$, e $(A \rightarrow B) \in \mathcal{L}_{LP}$.
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\subsection{Subfórmulas}
+	\begin{frame}[shrink]{Subfórmulas}
+		\begin{block}{Subfórmulas}
+			O conjunto {\tt Subf}($A$) de subfórmulas de uma fórmula $A$ é definido da seguinte maneira:
+						
+			\begin{enumerate}
+				\item {\bf Caso básico:} $A=p$ \\{\tt Subf}($p$) = $p$, para toda fórmula atômica $p \in \mathcal{P}$;
+				\item {\bf Caso} $A = (\neg B)$ \\{\tt Subf}($(\neg B)$) = $\{ (\neg B) \}$ $\cup$ {\tt Subf}($B$).
+				\item {\bf Caso} $A = (B \wedge C)$ \\ {\tt Subf}($(B \wedge C)$) = $\{ (B \wedge C) \}$ $\cup$ {\tt Subf}($B$) $\cup$ {\tt Subf}($C$).
+				\item {\bf Caso} $A = (B \vee C)$ \\ {\tt Subf}($(B \vee C)$) = $\{ (B \vee C) \}$ $\cup$ {\tt Subf}($B$) $\cup$ {\tt Subf}($C$).
+				\item {\bf Caso} $A = (B \rightarrow C)$ \\ {\tt Subf}($(B \rightarrow C)$) = $\{ (B \rightarrow C) \}$ $\cup$ {\tt Subf}($B$) $\cup$ {\tt Subf}($C$).
+			\end{enumerate}
+		\end{block}
+	\end{frame}
+	
+	\section{Ordem de precedência}
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{block}{}
+			Os parênteses mais externos de uma fórmula podem ser omitidos.\pause
+			\begin{itemize}
+				\item<3,6> $\neg r \equiv (\neg r)$
+				\item<4,6> $p \wedge q \equiv (p \wedge q)$
+				\item<5,6> $(r \wedge \neg q) \rightarrow \neg p \equiv ((r \wedge \neg q) \rightarrow \neg p)$
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{block}{}
+			O uso repetido dos conectivos $\wedge$ e $\vee$ dispensa o uso dos parênteses. \pause
+			
+			\begin{itemize}
+				\item<3,5,6> $p \wedge q \wedge \neg r \wedge \neg s \equiv ((p \wedge q) \wedge \neg r) \wedge \neg s$
+				\item<4,5,6> $r \vee s \wedge \neg t \vee p \equiv ((r \vee s) \wedge \neg t) \vee p$
+			\end{itemize}
+		\end{block}
+		
+		\onslide<6>{ 
+		\begin{alertblock}{Observação}
+			Note que os parênteses aninham-se {\bf à esquerda}.
+		\end{alertblock}
+		}
+	\end{frame}
+	
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{block}{}
+			O uso repetido do conectivo $\rightarrow$ também dispensa o uso dos parênteses. \pause
+			
+			\begin{itemize}
+				\item<3,5,6> $p \rightarrow q \rightarrow \neg r \equiv p \rightarrow (q \rightarrow \neg r)$
+				\item<4,5,6> $r \rightarrow \neg s \rightarrow \neg t \equiv r \rightarrow (\neg s \rightarrow \neg t)$
+			\end{itemize}
+		\end{block}
+		
+		\onslide<6>{ 
+		\begin{alertblock}{Observação}
+			Note que os parênteses aninham-se {\bf à direita}.
+		\end{alertblock}
+		}
+	\end{frame}
+	
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{block}{}
+			Quando houver uma combinação de conectivos, existe uma precedência entre eles, dada pela ordem: $\neg, \wedge, \vee, \rightarrow$. \pause
+			
+			\begin{itemize}
+				\item<3,6> $\neg p \wedge q \equiv ((\neg p) \wedge q)$
+				\item<4,6> $p \vee q \wedge r \equiv p \vee (q \wedge r)$
+				\item<5,6> $p \vee \neg q \rightarrow r \equiv (p \vee (\neg q)) \rightarrow r$
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Ordem de precedência}
+			De acordo com a definição de fórmula, o uso de parênteses é obrigatório ao se utilizar conectivos. Porém, iremos estabelecer algumas abreviações que serão permitidas: \pause
+		\begin{alertblock}{Recomendação}
+			Em geral, deve-se preferir clareza à economia de parênteses e, na dúvida, é bom deixar alguns parênteses para explicitar o sentido da fórmula.
+		\end{alertblock}
+	\end{frame}
+	
+	\begin{frame}{Onde estudar mais...}
+		\begin{block}{Seção 1.2: A Linguagem Proposicional}
+			SILVA, F. S. C. Da; FINGER, M.; MELO, A. C. V. de. Em {\bf Lógica para Computação}. São Paulo: Thomson Learning, 2006. \color{blue}{\bf Código Bib.: [519.687 SIL /log]}.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+\end{document}
