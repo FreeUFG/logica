@@ -1,0 +1,105 @@
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\author{\\Universidade Federal de Goiás (UFG) \\Lógica para Ciência da Computação \\Esdras Lins Bispo Jr.}
+
+\title{\sc \huge Lista de Exercícios 2}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+	\item Considerar duas valorações $\mathcal{V}_1$ e $\mathcal{V}_2$ tais que $\mathcal{V}_1$ valora todos os átomos em 1 e $\mathcal{V}_2$ valora todos os átomos em 0. Computar como $\mathcal{V}_1$ e $\mathcal{V}_2$ valoram as fórmulas a seguir:
+
+		\begin{enumerate}
+			\item $\neg p \rightarrow q$
+			\item $p \wedge \neg q \wedge r \wedge \neg s$
+			\item $p \rightarrow q \rightarrow r \rightarrow (p \wedge q \wedge r)$
+			\item $(p \wedge \neg q) \vee (r \wedge s)$
+			\item $p \wedge \neg (p \rightarrow \neg q) \vee \neg q$
+			\item $p \vee \neg p$
+			\item $p \wedge \neg p$
+			\item $((p \rightarrow q) \rightarrow p) \rightarrow p$
+		\end{enumerate}
+	
+	\item Dar uma valoração para os átomos das fórmulas (b) e (c), no exercício anterior, de forma que a valoração da fórmula seja 1.
+		
+	\item Classificar as fórmulas a seguir de acordo com sua satisfazibilidade, validade, falsicabilidade ou insatisfazibiidade:
+	
+		\begin{enumerate}
+			\item $(p \rightarrow q) \rightarrow (q \rightarrow p)$
+			\item $(p \wedge \neg p) \rightarrow q$
+			\item $p \rightarrow q \rightarrow p \wedge q$
+			\item $p \rightarrow \neg \neg p$
+			\item $\neg(p \vee q \rightarrow p)$
+			\item $\neg(p \rightarrow p \vee q)$
+			\item $((p \rightarrow q) \wedge (r \rightarrow q)) \rightarrow (p \vee r \rightarrow q)$
+		\end{enumerate}
+	
+	\item Encontrar uma valoração que satisfaça as seguintes fórmulas:
+	
+		\begin{enumerate}
+			\item $p \rightarrow \neg p$
+			\item $q \rightarrow p \wedge \neg p$
+			\item $(p \rightarrow q) \rightarrow p$
+			\item $\neg(p \vee q \rightarrow q)$
+			\item $(p \rightarrow q) \wedge (\neg p \rightarrow \neg q)$
+			\item $(p \rightarrow q) \wedge (q \rightarrow p)$
+		\end{enumerate}
+		
+	\item O {\it fragmento implicativo} é o conjunto de fórmulas que são construídas apenas usando o conectivo $\rightarrow$. Determinadas fórmulas desse fragmento receberam nomes especiais, conforme indicado a seguir. Verificar a validade de cada uma dessas fórmulas.
+	
+		\begin{enumerate}
+			\item[\bf I] \mbox{ } $p \rightarrow p$
+			\item[\bf B] \mbox{ } $(p \rightarrow q) \rightarrow (r \rightarrow p) \rightarrow (r \rightarrow p)$
+			\item[\bf C] \mbox{ } $(p \rightarrow q \rightarrow r) \rightarrow (q \rightarrow p \rightarrow r)$
+			\item[\bf W] \mbox{ } $(p \rightarrow p \rightarrow q) \rightarrow (p \rightarrow q)$
+			\item[\bf S] \mbox{ } $(p \rightarrow q \rightarrow r) \rightarrow (p \rightarrow q) \rightarrow (p \rightarrow r)$
+			\item[\bf K] \mbox{ } $p \rightarrow q \rightarrow p$
+	   \item[\bf Peirce] \mbox{ } $((p \rightarrow q) \rightarrow p) \rightarrow p$
+		\end{enumerate}	
+	
+	\item Dada uma fórmula $A$ com $N$ átomos, calcular o número máximo de posições (ou seja, células ocupadas por 0 ou 1) em uma Tabela da Verdade para $A$, em função de $|A|$ e $N$.
+	
+	\item Um {\it chip} de memória de um computador tem $2^4$ elementos com dois estados (ligado/desligado). Qual o número total de configurações ligado/desligado possíveis?
+	
+	\item A tabela da verdade (ou tabela-verdade) para $p \vee q$ mostra que o valor de $p \vee q$ é verdade se (i) $p$ for verdade, (ii) se $q$ for verdade ou (iii) se ambas forem verdades. Essa utilização da palavra ``ou'' em que o resultado é verdade se ambas as componentes são verdadeiras é chamado de {\it ou inclusivo}. Um outro uso da palavra ``ou'' na língua portuguesa é o {\it ou exclusivo}, algumas vezes denotado por XOU ou XOR (em inglês), em que o resultado é falso se ambas as componentes forem verdadeiras. Esse ou exclusivo está subentendido na frase: ``Na bifurcação, devemos seguir ou para o norte ou para o sul''. Esse ou exclusivo é simbolizado por $p \oplus q$.
+	
+		\begin{enumerate}
+			\item Construa a tabela-verdade para o ou exclusivo.
+			\item Mostre que $p \oplus q \equiv \neg ((p \rightarrow q) \wedge (q \rightarrow p))$.
+		\end{enumerate}
+	
+%	\item Seja $B \in$ {\tt Subf}($A$). A {\it polaridade} de $B$ em $A$ pode ou ser + (positiva) ou ser $-$ (negativa), e dizemos que essas duas polaridades são opostas. Definimos a polaridade de $B$ em $A$ por indução estrutural sobre $A$, da seguinte maneira:
+%	
+%		\begin{itemize}
+%			\item Se $B = A$, então a polaridade de $B$ é +.
+%			\item Se $B = \neg C$, então a polaridade de C é oposta à de $B$ .
+%			\item Se $B = C \circ D$, em que $\circ \in \{\wedge, \vee \}$, então as polaridades de $B$, $C$ e $D$ são as mesmas.
+%			\item Se $B = C \rightarrow D$, então $C$ tem polaridade oposta à de $B$, e $D$ tem a mesma polaridade que $B$.
+%		\end{itemize}
+%		
+%		Notar que, em uma mesma fórmula $A$, uma subfórmula $B$ pode ocorrer mais de uma vez, e as polaridades dessas ocorrências não são necessariamente as mesmas. Por exemplo, em $(p \rightarrow q) \rightarrow (p \rightarrow q)$ a primeira ocorrência de $p \rightarrow q$ tem polaridade negativa e a segunda, positiva.
+%		
+%		Com base nessa definição, provar ou refutar as seguintes afirmações:
+%		
+%		\begin{enumerate}
+%			\item Se $A$ é uma fórmula em que todos os átomos têm polaridade positiva, então $A$ é satisfazível.
+%			\item Se $A$ é uma fórmula em que todos os átomos têm polaridade positiva, então $A$ é falsificável.
+%			\item Se $A$ é uma fórmula em que todos os átomos têm polaridade negativa, então $A$ é satisfazível.
+%			\item Se $A$ é uma fórmula em que todos os átomos têm polaridade negativa, então $A$ é falsificável.
+%		\end{enumerate}
+%		
+%		Dica: dar exemplos de fórmulas em que todos os átomos têm polaridade só positiva e polaridade só negativa.
+	
+\end{enumerate}
+
+\end{document}
