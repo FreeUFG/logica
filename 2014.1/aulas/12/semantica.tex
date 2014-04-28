@@ -1,0 +1,190 @@
+\documentclass[xcolor=dvipsnames,table]{beamer}
+ 
+\usepackage{latexsym}
+\usepackage [ansinew]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{fancybox}
+\usepackage{datetime}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{url}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{acronym}
+\usepackage{array}
+
+\newtheorem{definicao}{Definio}
+\newcommand{\tab}{\hspace*{2em}}
+
+\mode<presentation>
+{
+  \definecolor{colortexto}{RGB}{0,0,0}
+  \setbeamertemplate{background canvas}[vertical shading][ bottom=white!10,top=white!10]
+  \setbeamercolor{normal text}{fg=colortexto}
+  \usetheme{Warsaw}
+}
+\setbeamertemplate{caption}[numbered]
+
+\title{Satisfazibilidade e Tabela da Verdade} 
+
+\author{
+  Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
+  } 
+ \institute{
+  Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
+\date{\textbf{29 de abril de 2014} }
+
+\logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\AtBeginSection{
+		\begin{frame}{Sumário}%[allowframebreaks]{Sumário}
+    		\tableofcontents[currentsection]
+    		%\tableofcontents[currentsection, hideothersubsections]
+		\end{frame}
+	}
+
+	\begin{frame}{Plano de Aula}
+		\tableofcontents
+		%\tableofcontents[hideallsubsections]
+	\end{frame}
+
+%------------------------------------------
+	\section{Pensamento}
+	\begin{frame}{Pensamento}
+  		\begin{center}
+    		\includegraphics[width=7cm]{images/pensamento.png}
+  		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Pensamento}
+		\begin{columns}
+			\column{.4\textwidth}  		
+		  		\begin{center}
+		    		\includegraphics[height=.5\textheight]{images/knuth.jpg}
+		  		\end{center}
+			\column{.6\textwidth}  		
+				\begin{block}{Frase}
+					\begin{center}
+						{\large God is a challenge because there is no proof of his existence and therefore the search must continue.}
+					\end{center}
+				\end{block}		  		
+		  		\begin{block}{Quem?}
+		  			\begin{center}
+						{\bf Donald Knuth (1938 - ***)} \\Criador do \TeX \ e Prêmio Turing 1974
+					\end{center}
+				\end{block}
+		\end{columns}
+	\end{frame}
+	
+	\section{Avisos}	
+	\begin{frame}{Notícias do Santa Cruz}
+		\begin{center}
+			\includegraphics[width=\textwidth]{images/santa.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------
+	\section{Revisão}	
+	\subsection{Semântica da LP}
+	\begin{frame}{Satisfazibilidade e Validade}
+		\begin{block}{Satisfazibilidade}
+			Uma fórmula $A$ é dita {\it satisfazível} se existe uma valoração $\mathcal{V}$ de seus átomos tal que $\mathcal{V}(A) = 1$.
+		\end{block}
+		\begin{block}{Insatisfazilidade}
+			Uma fórmula $A$ é dita {\it insatisfazível} se toda valoração $\mathcal{V}$ de seus átomos é tal que $\mathcal{V}(A) = 0$.
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Validade}
+		\begin{block}{Validade}
+			Uma fórmula $A$ é dita {\it válida} ou uma {\it tautologia} se toda valoração $\mathcal{V}$ de seus átomos é tal que $\mathcal{V}(A) = 1$.
+		\end{block}
+		\begin{block}{Falsificabilidade}
+			Uma fórmula $A$ é dita {\it falsificável} se existe uma valoração $\mathcal{V}$ de seus átomos tal que $\mathcal{V}(A) = 0$.
+		\end{block}
+	\end{frame}
+	
+	\section{Satisfazibilidade}
+	\begin{frame}{Corolários}
+		\begin{block}{Corolário 01}
+			Toda fórmula válida é também satisfazível.
+		\end{block} \pause
+		\begin{block}{Corolário 02}
+			Toda fórmula insatisfazível é falsificável.
+		\end{block} \pause
+		\begin{block}{Corolário 03}
+			Uma fórmula não pode ser satisfazível e insatisfazível.
+		\end{block} \pause
+		\begin{block}{Corolário 04}
+			Uma fórmula não pode ser válida e falsificável.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Corolários}
+		\begin{block}{Corolário 05}
+			Se $A$ é válida, então $\neg A$ é insatisfatível; analogamente se $A$ é insatisfatível, entao $\neg A$ é válida.
+		\end{block} \pause
+		\begin{block}{Corolário 06}
+			Se $A$ é satisfatível, $\neg A$ é falsificável, e vice-versa.
+		\end{block} \pause
+		\begin{block}{Corolário 07}
+			Existem fórmulas que são tanto satisfatíveis como falsificáveis.
+		\end{block} 
+	\end{frame}	
+	
+	\begin{frame}{Desafio na Computação}
+		\begin{block}{Problema em Aberto}
+			Dada uma fórmula complexa qualquer, classificá-la como 
+			\begin{itemize}
+				\item satisfazível;
+				\item insatisfazível;
+				\item válida;
+				\item falsificável.
+			\end{itemize}
+		\end{block} \pause
+		\begin{block}{Primeira solução...}
+			Construção de tabela da verdade.
+		\end{block}
+	\end{frame}
+	
+	\section{Tabela da Verdade}
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{}
+			Foi um dos primeiros métodos propostos na literatura para a verificação da satisfazibilidade e validade de fórmulas.
+		\end{block}
+		\begin{block}{Definição}
+			A Tabela da Verdade é um método exaustivo de geração de valorações para uma dada fórmula $A$.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{Construção}
+			\begin{itemize}
+				\item<1,5> A tabela possui uma coluna para cada subfórmula de $A$, inclusive para $A$. Em geral, os átomos de $A$ ficam situados nas colunas mais à esquerda, e $A$ é a fórmula mais à direita.
+				\item<2,5> Para cada valoração possível para os átomos de $A$, insere-se uma linha com os valores da valoração dos átomos.
+				\item<3,5> Em seguida, a valoração dos átomos é propagada para as subfórmulas, obedecendo-se a definição de valoração. Dessa forma, começa-se valorando as fórmulas menores até as maiores.
+				\item<4,5> Ao final desse processo, todas as possíveis valorações de $A$ são criadas.
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Onde estudar mais...}
+		\begin{block}{Seção 1.3: Semântica}
+			SILVA, F. S. C. Da; FINGER, M.; MELO, A. C. V. de. Em {\bf Lógica para Computação}. São Paulo: Thomson Learning, 2006. \color{blue}{\bf Código Bib.: [519.687 SIL /log]}.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+\end{document}
