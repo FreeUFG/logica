@@ -1,0 +1,323 @@
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+% Definindo novas cores
+\definecolor{verde}{rgb}{0.25,0.5,0.35}
+
+\author{\\Universidade Federal de Goiás (UFG) \\Lógica para Ciência da Computação \\Esdras Lins Bispo Jr.}
+
+\title{\sc \huge Lista de Exercícios 2}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+	\item Considerar duas valorações $\mathcal{V}_1$ e $\mathcal{V}_2$ tais que $\mathcal{V}_1$ valora todos os átomos em 1 e $\mathcal{V}_2$ valora todos os átomos em 0. Computar como $\mathcal{V}_1$ e $\mathcal{V}_2$ valoram as fórmulas a seguir:
+
+		\begin{enumerate}
+			\item $\neg p \rightarrow q$
+			
+			{\color{verde}$\mathcal{V}_1(p,q)=(1,1) \therefore \mathcal{V}_1(\neg p \rightarrow q) = \neg 1 \rightarrow 1 = 1$ \\
+			$\mathcal{V}_2(p,q)=(0,0) \therefore \mathcal{V}_2(\neg p \rightarrow q) = \neg 0 \rightarrow 0 = 0$}
+			
+			\item $p \wedge \neg q \wedge r \wedge \neg s$
+			
+			{\color{verde} $\mathcal{V}_1(p,q,r,s)=(1,1,1,1) \therefore \mathcal{V}_1(p \wedge \neg q \wedge r \wedge \neg s) = 1 \wedge \neg 1 \wedge 1 \wedge \neg 1 = 0$ \\
+			$\mathcal{V}_2(p,q,r,s)=(0,0,0,0) \therefore \mathcal{V}_2(p \wedge \neg q \wedge r \wedge \neg s) = 0 \wedge \neg 0 \wedge 0 \wedge \neg 0 = 0$}
+			
+			\item $p \rightarrow q \rightarrow r \rightarrow (p \wedge q \wedge r)$
+			
+			{\color{verde} $\mathcal{V}_1(p,q,r)=(1,1,1) \therefore$ \\
+			$\mathcal{V}_1(p \rightarrow q \rightarrow r \rightarrow (p \wedge q \wedge r)) = 1 \rightarrow 1 \rightarrow 1 \rightarrow (1 \wedge 1 \wedge 1) = 1$ \\
+			$\mathcal{V}_2(p,q,r)=(0,0,0) \therefore$ \\
+			$\mathcal{V}_2(p \rightarrow q \rightarrow r \rightarrow (p \wedge q \wedge r)) = 0 \rightarrow 0 \rightarrow 0 \rightarrow (0 \wedge 0 \wedge 0) = 1$.}
+			
+			\item $(p \wedge \neg q) \vee (r \wedge s)$
+			
+			{\color{verde} $\mathcal{V}_1(p,q,r,s)=(1,1,1,1) \therefore$ \\ $\mathcal{V}_1((p \wedge \neg q) \vee (r \wedge s)) = (1 \wedge \neg 1) \vee (1 \wedge 1) = 1$ \\
+			$\mathcal{V}_2(p,q,r,s)=(0,0,0,0) \therefore$ \\ $\mathcal{V}_2((p \wedge \neg q) \vee (r \wedge s)) = (0 \wedge \neg 0) \vee (0 \wedge 0) = 0$.}
+			
+			\item $p \wedge \neg (p \rightarrow \neg q) \vee \neg q$
+			
+			{\color{verde} $\mathcal{V}_1(p,q)=(1,1) \therefore$ \\
+			$\mathcal{V}_1(p \wedge \neg (p \rightarrow \neg q) \vee \neg q) = 1 \wedge \neg (1 \rightarrow \neg 1) \vee \neg 1 = 1$ \\
+			$\mathcal{V}_2(p,q)=(0,0) \therefore$ \\
+			$\mathcal{V}_2(p \wedge \neg (p \rightarrow \neg q) \vee \neg q) = 0 \wedge \neg (0 \rightarrow \neg 0) \vee \neg 0 = 1$.}
+			
+			\item $p \vee \neg p$
+			
+			{\color{verde} $\mathcal{V}_1(p)= 1 \therefore \mathcal{V}_1(p \vee \neg p) = 1 \vee \neg 1 = 1$ \\
+			$\mathcal{V}_2(p) = 0 \therefore \mathcal{V}_2(p \vee \neg p) = 0 \vee \neg 0 = 1$.}
+			
+			\item $p \wedge \neg p$
+			
+			{\color{verde} $\mathcal{V}_1(p)= 1 \therefore \mathcal{V}_1(p \wedge \neg p) = 1 \wedge \neg 1 = 0$ \\
+			$\mathcal{V}_2(p) = 0 \therefore \mathcal{V}_2(p \wedge \neg p) = 0 \wedge \neg 0 = 0$.}			
+			
+			\item $((p \rightarrow q) \rightarrow p) \rightarrow p$
+			
+			{\color{verde} R - $\mathcal{V}_1(p,q)=(1,1) \therefore$ \\
+			$\mathcal{V}_1(((p \rightarrow q) \rightarrow p) \rightarrow p) = ((1 \rightarrow 1) \rightarrow 1) \rightarrow 1 = 1$ \\
+			$\mathcal{V}_2(p,q)=(0,0) \therefore$ \\
+			$\mathcal{V}_2(((p \rightarrow q) \rightarrow p) \rightarrow p) = ((0 \rightarrow 0) \rightarrow 0) \rightarrow 0 = 1$.}
+			
+		\end{enumerate}
+	
+	\item Dar uma valoração para os átomos das fórmulas (b) e (c), no exercício anterior, de forma que a valoração da fórmula seja 1.
+	
+	{\color{verde} R - (b) $\mathcal{V}(p,q,r,s)=(1,0,1,0)$ e \\(c) $\mathcal{V}(p,q,r)=(1,1,1)$ \\(como (c) é uma fórmula válida, qualquer valoração $\mathcal{V}(p,q,r)$ será 1.}
+		
+	\item Classificar as fórmulas a seguir de acordo com sua satisfazibilidade, validade, falsicabilidade ou insatisfazibiidade:
+	
+		\begin{enumerate}
+			\item $(p \rightarrow q) \rightarrow (q \rightarrow p)$
+			\item $(p \wedge \neg p) \rightarrow q$
+			\item $p \rightarrow q \rightarrow p \wedge q$
+			\item $p \rightarrow \neg \neg p$
+			\item $\neg(p \vee q \rightarrow p)$
+			\item $\neg(p \rightarrow p \vee q)$
+			\item $((p \rightarrow q) \wedge (r \rightarrow q)) \rightarrow (p \vee r \rightarrow q)$
+		\end{enumerate}
+	
+	\item Encontrar uma valoração que satisfaça as seguintes fórmulas:
+	
+		\begin{enumerate}
+			\item $p \rightarrow \neg p$ 
+			
+			{\color{verde} R - $\mathcal{V}(p)=0$.}
+			
+			\item $q \rightarrow p \wedge \neg p$
+			
+			{\color{verde} R - $\mathcal{V}(p,q)=(0,0)$ ou $\mathcal{V}(p,q)=(1,0)$.}
+			
+			\item $(p \rightarrow q) \rightarrow p$
+			
+			{\color{verde} R - $\mathcal{V}(p,q)=(1,0)$ ou $\mathcal{V}(p,q)=(1,1)$.}			
+			
+			\item $\neg(p \vee q \rightarrow q)$
+			
+			{\color{verde} R - $\mathcal{V}(p,q)=(1,0)$.}			
+			
+			\item $(p \rightarrow q) \wedge (\neg p \rightarrow \neg q)$
+			
+			{\color{verde} R - $\mathcal{V}(p,q)=(0,0)$ ou $\mathcal{V}(p,q)=(1,1)$.}
+			
+			\item $(p \rightarrow q) \wedge (q \rightarrow p)$
+			
+			{\color{verde} R - $\mathcal{V}(p,q)=(0,0)$ ou $\mathcal{V}(p,q)=(1,1)$.}
+			
+		\end{enumerate}
+		
+	\item O {\it fragmento implicativo} é o conjunto de fórmulas que são construídas apenas usando o conectivo $\rightarrow$. Determinadas fórmulas desse fragmento receberam nomes especiais, conforme indicado a seguir. Verificar a validade de cada uma dessas fórmulas.
+	
+		\begin{enumerate}
+			\item[\bf I] \mbox{ } $p \rightarrow p$ 			
+			
+			{\color{verde} R - Fórmula válida:
+			\begin{center}
+				\begin{tabular}{c|c}
+					$p$ & $p \rightarrow p$ \\ 
+					\hline
+					0 & 1 \\ 
+					1 & 1 \\ 
+					\hline 
+				\end{tabular}
+			\end{center} 
+			}
+			
+			\item[\bf B] \mbox{ } $(p \rightarrow q) \rightarrow (r \rightarrow p) \rightarrow (r \rightarrow p)$
+			
+			{\color{verde} R - Fórmula válida:
+			\begin{center}
+				\begin{tabular}{ccc|c|c|c|c}
+				 &  &  & $I$ & $II$ & $III$ &  \\ 
+				\hline 
+				$p$ & $q$ & $r$ & $p \rightarrow q$ & $r \rightarrow p$ & $II \rightarrow II$ & $I \rightarrow III$ \\ 
+				\hline 
+				0 & 0 & 0 & 1 & 1 & 1 & 1 \\ 
+				0 & 0 & 1 & 1 & 0 & 1 & 1 \\ 
+				0 & 1 & 0 & 1 & 1 & 1 & 1 \\ 
+				0 & 1 & 1 & 1 & 0 & 1 & 1 \\ 
+				1 & 0 & 0 & 0 & 1 & 1 & 1 \\ 
+				1 & 0 & 1 & 0 & 1 & 1 & 1 \\ 
+				1 & 1 & 0 & 1 & 1 & 1 & 1 \\ 
+				1 & 1 & 1 & 1 & 1 & 1 & 1 \\ 
+				\hline 
+				\end{tabular}  
+			\end{center} 
+			}
+			\item[\bf C] \mbox{ } $(p \rightarrow q \rightarrow r) \rightarrow (q \rightarrow p \rightarrow r)$
+			
+			{\color{verde} R - Fórmula válida:
+			\begin{center}
+				\begin{tabular}{ccc|c|c|c|c|c}
+				 &  &  & $I$ & $II$ & $III$ & $IV$ & \\
+				 \hline
+				$p$ & $q$ & $r$ & $q \rightarrow r$ & $p \rightarrow r$ & $p \rightarrow I$ & $q \rightarrow II$ & $III \rightarrow IV$\\ 
+				\hline 
+				0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\ 
+				0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\  
+				0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 \\  
+				0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\  
+				1 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\ 
+				1 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\  
+				1 & 1 & 0 & 0 & 0 & 0 & 0 & 1 \\  
+				1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\  
+				\hline 
+				\end{tabular}  
+			\end{center} 
+			}
+			\item[\bf W] \mbox{ } $(p \rightarrow p \rightarrow q) \rightarrow (p \rightarrow q)$
+
+			{\color{verde} R - Fórmula válida:
+			\begin{center}
+				\begin{tabular}{c|c|c|c|c}
+				 &  & $I$ & $II$ &  \\ 
+				\hline 
+				$p$ & $q$ & $p \rightarrow q$ & $p \rightarrow I$ & $II \rightarrow I$ \\ 
+				\hline 
+				0 & 0 & 1 & 1 & 1 \\ 
+				0 & 1 & 1 & 1 & 1 \\ 
+				1 & 0 & 0 & 0 & 1 \\ 
+				1 & 1 & 1 & 1 & 1 \\ 
+				\hline 
+				\end{tabular} 
+			\end{center} 
+			}
+			\item[\bf S] \mbox{ } $(p \rightarrow q \rightarrow r) \rightarrow (p \rightarrow q) \rightarrow (p \rightarrow r)$
+			
+			{\color{verde} R - Fórmula válida:
+			\begin{center}
+				\begin{tabular}{ccc|c|c|c|c|c|c}
+				 &  &  & $I$ & $II$ & $III$ & $IV$ & $V$ &\\
+				 \hline
+				$p$ & $q$ & $r$ & $q \rightarrow r$ & $p \rightarrow q$ & $p \rightarrow r$ & $p \rightarrow I$ & $II \rightarrow III$ & $IV \rightarrow V$\\ 
+				\hline 
+				0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+				0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\  
+				0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\  
+				0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\  
+				1 & 0 & 0 & 1 & 0 & 0 & 1 & 1 & 1 \\ 
+				1 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\  
+				1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1 \\  
+				1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\  
+				\hline 
+				\end{tabular}  
+			\end{center} 
+			}
+			\item[\bf K] \mbox{ } $p \rightarrow q \rightarrow p$
+			
+			{\color{verde} R - Fórmula válida:
+			\begin{center}
+				\begin{tabular}{c|c|c|c}
+				 &  & $I$ &  \\ 
+				\hline 
+				$p$ & $q$ & $q \rightarrow p$ & $p \rightarrow I$  \\ 
+				\hline 
+				0 & 0 & 1 & 1 \\ 
+				0 & 1 & 0 & 1 \\ 
+				1 & 0 & 1 & 1 \\ 
+				1 & 1 & 1 & 1 \\ 
+				\hline 
+				\end{tabular} 
+			\end{center} 
+			}
+	   \item[\bf Peirce] \mbox{ } $((p \rightarrow q) \rightarrow p) \rightarrow p$
+	   
+	   {\color{verde} R - Fórmula válida:
+			\begin{center}
+				\begin{tabular}{c|c|c|c|c}
+				 &  & $I$ & $II$ &  \\ 
+				\hline 
+				$p$ & $q$ & $p \rightarrow q$ & $I \rightarrow p$ & $II \rightarrow p$ \\ 
+				\hline 
+				0 & 0 & 1 & 0 & 1 \\ 
+				0 & 1 & 1 & 0 & 1 \\ 
+				1 & 0 & 0 & 1 & 1 \\ 
+				1 & 1 & 1 & 1 & 1 \\ 
+				\hline 
+				\end{tabular} 
+			\end{center} 
+			}
+		\end{enumerate}	
+	
+	\item Dada uma fórmula $A$ com $N$ átomos, calcular o número máximo de posições (ou seja, células ocupadas por 0 ou 1) em uma Tabela da Verdade para $A$, em função de $|A|$ e $N$.
+	
+	%{\color{verde} R - O número máximo de posições em uma tabela da verdade para $A$ será o produto do número de linhas pelo número de colunas desta tabela. O número de linhas de uma tabela da verdade é dado pelo número de valorações possíveis de uma dada fórmula, i.e., $2^N$. E teremos o número máximo de colunas na tabela quando admitimos que não existem átomos repetidos na fórmula. Isto acarreta no número de $|A|$ colunas para este caso. Logo, o número máximo de posições em uma tabela da verdade para $A$, em função de $|A|$ e $N$, é $2^N |A|$.
+	%}
+	
+	\item Um {\it chip} de memória de um computador tem $2^4$ elementos com dois estados (ligado/desligado). Qual o número total de configurações ligado/desligado possíveis?
+	
+	{\color{verde} R - Como $2^4$ elementos são 16 elementos, temos 16 elementos com dois estados do tipo ligado/desligado. Elementos deste tipo funcionam semelhantemente a átomos proposicionais. Logo, o número total de configurações ligado/desligado possíveis será igual ao número de possíveis valorações admitidas pelo conjunto destes átomos, i.e, $2^N =2^{16} =  65.536$.	
+	}
+	
+	\item A tabela da verdade (ou tabela-verdade) para $p \vee q$ mostra que o valor de $p \vee q$ é verdade se (i) $p$ for verdade, (ii) se $q$ for verdade ou (iii) se ambas forem verdades. Essa utilização da palavra ``ou'' em que o resultado é verdade se ambas as componentes são verdadeiras é chamado de {\it ou inclusivo}. Um outro uso da palavra ``ou'' na língua portuguesa é o {\it ou exclusivo}, algumas vezes denotado por XOU ou XOR (em inglês), em que o resultado é falso se ambas as componentes forem verdadeiras. Esse ou exclusivo está subentendido na frase: ``Na bifurcação, devemos seguir ou para o norte ou para o sul''. Esse ou exclusivo é simbolizado por $p \oplus q$.
+	
+		\begin{enumerate}
+			\item Construa a tabela-verdade para o ou exclusivo.
+			
+%			{\color{verde} 
+%			\begin{center}			
+%				\begin{tabular}{cc|c}
+%					$p$ & $q$ & $p \oplus q$ \\ 
+%					\hline 
+%					0 & 0 & 0 \\  
+%					0 & 1 & 1 \\ 
+%					1 & 0 & 1 \\ 
+%					1 & 1 & 0 \\ 
+%					\hline 
+%				\end{tabular} 
+%			\end{center}
+%			}
+			\item Mostre que $p \oplus q \equiv \neg ((p \rightarrow q) \wedge (q \rightarrow p))$.
+			
+%			{\color{verde} 
+%			\begin{center}
+%				\begin{tabular}{cc|c|c|c|c|c|c}
+%				 &  & $I$ & $II$ & $III$ & $IV$ & $V$ & \\
+%				\hline
+%				$p$ & $q$ & $p \oplus q$ & $p \rightarrow q$ & $q \rightarrow p$ & $II \wedge III$ & $\neg IV$ & $I \equiv V$ \\ 
+%				\hline 
+%				0 & 0 & 0 & 1 & 1 & 1 & 0 & 1\\
+%				0 & 1 & 1 & 1 & 0 & 0 & 1 & 1\\
+%				1 & 0 & 1 & 0 & 1 & 0 & 1 & 1\\ 
+%				1 & 1 & 0 & 1 & 1 & 1 & 0 & 1\\ 
+%				\hline 
+%				\end{tabular} 
+%			\end{center}
+%			}
+		\end{enumerate}
+	
+%	\item Seja $B \in$ {\tt Subf}($A$). A {\it polaridade} de $B$ em $A$ pode ou ser + (positiva) ou ser $-$ (negativa), e dizemos que essas duas polaridades são opostas. Definimos a polaridade de $B$ em $A$ por indução estrutural sobre $A$, da seguinte maneira:
+%	
+%		\begin{itemize}
+%			\item Se $B = A$, então a polaridade de $B$ é +.
+%			\item Se $B = \neg C$, então a polaridade de C é oposta à de $B$ .
+%			\item Se $B = C \circ D$, em que $\circ \in \{\wedge, \vee \}$, então as polaridades de $B$, $C$ e $D$ são as mesmas.
+%			\item Se $B = C \rightarrow D$, então $C$ tem polaridade oposta à de $B$, e $D$ tem a mesma polaridade que $B$.
+%		\end{itemize}
+%		
+%		Notar que, em uma mesma fórmula $A$, uma subfórmula $B$ pode ocorrer mais de uma vez, e as polaridades dessas ocorrências não são necessariamente as mesmas. Por exemplo, em $(p \rightarrow q) \rightarrow (p \rightarrow q)$ a primeira ocorrência de $p \rightarrow q$ tem polaridade negativa e a segunda, positiva.
+%		
+%		Com base nessa definição, provar ou refutar as seguintes afirmações:
+%		
+%		\begin{enumerate}
+%			\item Se $A$ é uma fórmula em que todos os átomos têm polaridade positiva, então $A$ é satisfazível.
+%			\item Se $A$ é uma fórmula em que todos os átomos têm polaridade positiva, então $A$ é falsificável.
+%			\item Se $A$ é uma fórmula em que todos os átomos têm polaridade negativa, então $A$ é satisfazível.
+%			\item Se $A$ é uma fórmula em que todos os átomos têm polaridade negativa, então $A$ é falsificável.
+%		\end{enumerate}
+%		
+%		Dica: dar exemplos de fórmulas em que todos os átomos têm polaridade só positiva e polaridade só negativa.
+	
+\end{enumerate}
+
+\end{document}
