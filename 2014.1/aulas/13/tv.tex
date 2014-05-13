@@ -29,14 +29,14 @@
 }
 \setbeamertemplate{caption}[numbered]
 
-\title{Satisfazibilidade e Tabela da Verdade} 
+\title{Tabela da Verdade e Consequência Lógica} 
 
 \author{
   Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
   } 
  \institute{
   Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
-\date{\textbf{29 de abril de 2014} }
+\date{\textbf{13 de maio de 2014} }
 
 \logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
 
@@ -70,17 +70,17 @@
 		\begin{columns}
 			\column{.4\textwidth}  		
 		  		\begin{center}
-		    		\includegraphics[height=.5\textheight]{images/knuth.jpg}
+		    		\includegraphics[height=.6\textheight]{images/fromm.jpg}
 		  		\end{center}
 			\column{.6\textwidth}  		
 				\begin{block}{Frase}
 					\begin{center}
-						{\large God is a challenge because there is no proof of his existence and therefore the search must continue.}
+						{\large A maior parte das pessoas vê no problema do amor, em primeiro lugar, o problema de ser amado, e não o problema da própria capacidade de amar.}
 					\end{center}
 				\end{block}		  		
 		  		\begin{block}{Quem?}
 		  			\begin{center}
-						{\bf Donald Knuth (1938 - ***)} \\Criador do \TeX \ e Prêmio Turing 1974
+						{\bf Erich Fromm (1900 - 1980)} \\Psicanalista, filósofo e sociólogo alemão.
 					\end{center}
 				\end{block}
 		\end{columns}
@@ -95,35 +95,16 @@
 %------------------------------------------
 	\section{Revisão}	
 	\subsection{Semântica da LP}
-	\begin{frame}{Satisfazibilidade e Validade}
-		\begin{block}{Satisfazibilidade}
-			Uma fórmula $A$ é dita {\it satisfazível} se existe uma valoração $\mathcal{V}$ de seus átomos tal que $\mathcal{V}(A) = 1$.
-		\end{block}
-		\begin{block}{Insatisfazilidade}
-			Uma fórmula $A$ é dita {\it insatisfazível} se toda valoração $\mathcal{V}$ de seus átomos é tal que $\mathcal{V}(A) = 0$.
-		\end{block}
-	\end{frame}	
-	
-	\begin{frame}{Validade}
-		\begin{block}{Validade}
-			Uma fórmula $A$ é dita {\it válida} ou uma {\it tautologia} se toda valoração $\mathcal{V}$ de seus átomos é tal que $\mathcal{V}(A) = 1$.
-		\end{block}
-		\begin{block}{Falsificabilidade}
-			Uma fórmula $A$ é dita {\it falsificável} se existe uma valoração $\mathcal{V}$ de seus átomos tal que $\mathcal{V}(A) = 0$.
-		\end{block}
-	\end{frame}
-	
-	\section{Satisfazibilidade}
 	\begin{frame}{Corolários}
 		\begin{block}{Corolário 01}
 			Toda fórmula válida é também satisfazível.
-		\end{block} \pause
+		\end{block}
 		\begin{block}{Corolário 02}
 			Toda fórmula insatisfazível é falsificável.
-		\end{block} \pause
+		\end{block}
 		\begin{block}{Corolário 03}
 			Uma fórmula não pode ser satisfazível e insatisfazível.
-		\end{block} \pause
+		\end{block}
 		\begin{block}{Corolário 04}
 			Uma fórmula não pode ser válida e falsificável.
 		\end{block}
@@ -132,10 +113,10 @@
 	\begin{frame}{Corolários}
 		\begin{block}{Corolário 05}
 			Se $A$ é válida, então $\neg A$ é insatisfatível; analogamente se $A$ é insatisfatível, entao $\neg A$ é válida.
-		\end{block} \pause
+		\end{block}
 		\begin{block}{Corolário 06}
 			Se $A$ é satisfatível, $\neg A$ é falsificável, e vice-versa.
-		\end{block} \pause
+		\end{block}
 		\begin{block}{Corolário 07}
 			Existem fórmulas que são tanto satisfatíveis como falsificáveis.
 		\end{block} 
@@ -174,6 +155,107 @@
 				\item<3,5> Em seguida, a valoração dos átomos é propagada para as subfórmulas, obedecendo-se a definição de valoração. Dessa forma, começa-se valorando as fórmulas menores até as maiores.
 				\item<4,5> Ao final desse processo, todas as possíveis valorações de $A$ são criadas.
 			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{Classificação}
+			\begin{itemize}
+				\item<1,5> $A$ é satisfazível se alguma linha da coluna $A$ contiver 1;
+				\item<2,5> $A$ é válida se todas as linhas da coluna $A$ contiverem 1;
+				\item<3,5> $A$ é falsificável se alguma linha da coluna $A$ contiver 0;
+				\item<4,5> $A$ é insatisfazível se todas as linhas da coluna $A$ contiverem 0.
+			\end{itemize}
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{Fórmula 1}
+			$A_1 = p \vee \neg p$
+		\end{block}\pause
+		\begin{block}{Fórmula 2}
+			$A_2 = p \wedge \neg p$
+		\end{block}\pause
+		\begin{block}{Fórmula 3}
+			$A_3 = (p \vee q) \wedge (\neg  p \vee \neg q)$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{Fórmula}
+			$A = p \vee \neg p$
+		\end{block}				
+		\begin{block}{Construção da Tabela da Verdade}		
+			\begin{center}		
+				\rowcolors{1}{RoyalBlue!20}{RoyalBlue!5}	
+				\begin{tabular}{c|c|c}
+		$p$ & $\neg p$ & $p \vee \neg p$ \\
+		\hline
+		\uncover<1-3>{0} & \uncover<2-3>{1} & \uncover<3>{1} \\
+		\uncover<1-3>{1} & \uncover<2-3>{0} & \uncover<3>{1} \\
+		\hline		
+				\end{tabular}
+			\end{center}
+	   \end{block}
+	\end{frame}
+	
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{Fórmula}
+			$A = p \wedge \neg p$
+		\end{block}				
+		\begin{block}{Construção da Tabela da Verdade}		
+			\begin{center}			
+			\rowcolors{1}{RoyalBlue!20}{RoyalBlue!5}	
+			\begin{tabular}{c|c|c}
+	$p$ & $\neg p$ & $p \wedge \neg p$ \\
+	\hline
+	\uncover<1-3>{0} & \uncover<2-3>{1} & \uncover<3>{0} \\
+	\uncover<1-3>{1} & \uncover<2-3>{0} & \uncover<3>{0} \\
+	\hline		
+			\end{tabular}
+			\end{center}
+	   \end{block}
+	\end{frame}
+	
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{Fórmula}
+			$A = (p \vee q) \wedge (\neg  p \vee \neg q)$
+		\end{block}				
+		\begin{block}{Construção da Tabela da Verdade}
+			\begin{center}		
+			\rowcolors{1}{RoyalBlue!20}{RoyalBlue!5}	
+			\begin{tabular}{c|c|c|c|c|c|c}
+	$p$ & $q$ & $\neg p$ & $\neg q$ & $p \vee q$ & $\neg p \vee \neg q$ & $(p \vee q) \wedge (\neg  p \vee \neg q)$\\
+	\hline
+	\uncover<1,2,4,7>{0} & \uncover<1,3,4,7>{0} & \uncover<2,5,7>{1} & \uncover<3,5,7>{1} & \uncover<4,6,7>{0} & \uncover<5-7>{1} & \uncover<6,7>{0} \\
+	\uncover<1,2,4,7>{0} & \uncover<1,3,4,7>{1} & \uncover<2,5,7>{1} & \uncover<3,5,7>{0} & \uncover<4,6,7>{1} & \uncover<5-7>{1} & \uncover<6,7>{1} \\
+	\uncover<1,2,4,7>{1} & \uncover<1,3,4,7>{0} & \uncover<2,5,7>{0} & \uncover<3,5,7>{1} & \uncover<4,6,7>{1} & \uncover<5-7>{1} & \uncover<6,7>{1} \\
+	\uncover<1,2,4,7>{1} & \uncover<1,3,4,7>{1} & \uncover<2,5,7>{0} & \uncover<3,5,7>{0} & \uncover<4,6,7>{1} & \uncover<5-7>{0} & \uncover<6,7>{0} \\
+	\hline		
+			\end{tabular}
+			\end{center}
+		\end{block}
+	\end{frame}
+	
+	\section{Consequência Lógica}
+	\begin{frame}{Consequência Lógica}
+		\begin{block}{$A \models B$}
+			Dizemos que $B$ é {\it consequência lógica} de $A$ (representada por $A \models B$) se toda valoração $\mathcal{V}$ que satisfaz $A$ também satisfaz $B$.
+		\end{block} \pause
+		\begin{block}{$A \models B$}
+			Lê-se $B$ é consequência lógica de $A$, ou $A$ {\it implica logicamente} $B$.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Consequência Lógica}
+		\begin{block}{Verificar se...}
+			$p \vee q \rightarrow r \models p \rightarrow r$ \mbox{   } \pause {\color{green} \bf  V}
+		\end{block} \pause
+		\begin{block}{Verificar se...}
+			$p \wedge q \rightarrow r \models p \rightarrow r$ \mbox{   } \pause {\color{red} \bf F}
+		\end{block}\pause
+		\begin{block}{Logo...}
+			$p \wedge q \rightarrow r \not\models p \rightarrow r$
 		\end{block}
 	\end{frame}
 	
