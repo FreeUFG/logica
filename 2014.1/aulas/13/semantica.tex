@@ -29,7 +29,7 @@
 }
 \setbeamertemplate{caption}[numbered]
 
-\title{Satisfazibilidade} 
+\title{Satisfazibilidade e Tabela da Verdade} 
 
 \author{
   Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
@@ -153,6 +153,27 @@
 		\end{block} \pause
 		\begin{block}{Primeira solução...}
 			Construção de tabela da verdade.
+		\end{block}
+	\end{frame}
+	
+	\section{Tabela da Verdade}
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{}
+			Foi um dos primeiros métodos propostos na literatura para a verificação da satisfazibilidade e validade de fórmulas.
+		\end{block}
+		\begin{block}{Definição}
+			A Tabela da Verdade é um método exaustivo de geração de valorações para uma dada fórmula $A$.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Tabela da Verdade}
+		\begin{block}{Construção}
+			\begin{itemize}
+				\item<1,5> A tabela possui uma coluna para cada subfórmula de $A$, inclusive para $A$. Em geral, os átomos de $A$ ficam situados nas colunas mais à esquerda, e $A$ é a fórmula mais à direita.
+				\item<2,5> Para cada valoração possível para os átomos de $A$, insere-se uma linha com os valores da valoração dos átomos.
+				\item<3,5> Em seguida, a valoração dos átomos é propagada para as subfórmulas, obedecendo-se a definição de valoração. Dessa forma, começa-se valorando as fórmulas menores até as maiores.
+				\item<4,5> Ao final desse processo, todas as possíveis valorações de $A$ são criadas.
+			\end{itemize}
 		\end{block}
 	\end{frame}
 	
