@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper,oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\author{\\Universidade Federal de Goiás (UFG) - Câmpus Jataí\\Bacharelado em Ciência da Computação \\Lógica para Ciência da Computação \\Prof. Esdras Lins Bispo Jr.}
+
+\title{\sc \huge Lista de Exercícios 3}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+	\item Provar ou refutar as seguintes consequências lógicas usando tabelas-verdade:
+
+		\begin{enumerate}
+			\item $\neg q \rightarrow \neg p \models p \rightarrow q $
+			\item $\neg p \rightarrow \neg q \models p \rightarrow q$
+			\item $p \rightarrow q \models p \rightarrow q \vee r$
+			\item $p \rightarrow q \models p \rightarrow q \wedge r$
+			\item $(p \rightarrow q) \wedge q \models p$
+		\end{enumerate}
+	
+	\item Identificar qual regra de inferência é ilustrada em cada argumento abaixo.
+		\begin{enumerate}
+			\item Se Martins é o autor, então o livro é de ficção. Mas o livro não é de ficção. Portanto, Martins não é o autor.
+			\item Se a firma falir, todos os seus ativos têm que ser confiscados. A firma faliu. Segue que todos os seus bens têm que ser confiscados.
+			\item O cachorro tem um pêlo sedoso e adora latir. Portanto, o cachorro adora latir.
+			\item Se Paulo é bom nadador, então ele é um bom corredor. Se Paulo é um bom corredor, então ele é um bom ciclista. Portante, se Paulo é um bom nadador, então é ele é um bom ciclista.
+		\end{enumerate}
+		
+	\item Justifique cada passo na sequência de demonstração de $(p \rightarrow (q \vee r)) \wedge \neg q \wedge \neg r \models \neg p$:
+	
+		\begin{eqnarray*}
+			(1) & p \rightarrow (q \vee r) & \\
+			(2) & \neg q & \\
+			(3) & \neg r & \\
+			(4) & \neg q \wedge \neg r & \\
+			(5) & \neg (q \vee r) & \\
+			(6) & \neg p & 
+		\end{eqnarray*}
+		
+	\item Justifique cada passo na sequência de demonstração de $\neg p \wedge q \wedge (q \rightarrow (p \vee r)) \models r$:
+	
+		\begin{eqnarray*}
+			(1) &\neg p & \\
+			(2) & q & \\
+			(3) & q \rightarrow (p \vee r) & \\
+			(4) & p \vee r & \\
+			(5) & r &
+		\end{eqnarray*}
+		
+	\item Prove que os argumentos abaixo são válidos através do uso de regras de inferência:
+	
+		\begin{enumerate}
+			\item $\neg p \wedge (q \rightarrow p) \models \neg q$
+			\item $(p \rightarrow q) \wedge (p \rightarrow (q \rightarrow r)) \models p \rightarrow r$
+			\item $(r \rightarrow s) \rightarrow r \models (r \rightarrow s) \rightarrow s$
+			\item $(p \rightarrow (q \rightarrow r)) \wedge (p \vee \neg s) \wedge q \models s \rightarrow r$
+			\item $(\neg p \rightarrow \neg q) \wedge q \wedge (p \rightarrow r) \models r$
+			\item $(p \rightarrow q) \wedge (q \rightarrow (r \rightarrow s)) \wedge (p \rightarrow (q \rightarrow r)) \models p \rightarrow s$
+			\item $p \rightarrow (q \rightarrow r) \models q \rightarrow (p \rightarrow r)$
+			\item $p \wedge q \models \neg (p \rightarrow \neg q)$
+			\item $(p \vee (q \rightarrow p)) \wedge q \models p$
+		\end{enumerate}
+		
+	
+	
+\end{enumerate}
+
+\end{document}

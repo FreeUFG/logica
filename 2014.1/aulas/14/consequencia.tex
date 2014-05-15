@@ -1,0 +1,176 @@
+\documentclass[xcolor=dvipsnames,table]{beamer}
+ 
+\usepackage{latexsym}
+\usepackage [ansinew]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{fancybox}
+\usepackage{datetime}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{url}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{acronym}
+\usepackage{array}
+
+\newtheorem{definicao}{Definio}
+\newcommand{\tab}{\hspace*{2em}}
+
+\mode<presentation>
+{
+  \definecolor{colortexto}{RGB}{0,0,0}
+  \setbeamertemplate{background canvas}[vertical shading][ bottom=white!10,top=white!10]
+  \setbeamercolor{normal text}{fg=colortexto}
+  \usetheme{Warsaw}
+}
+\setbeamertemplate{caption}[numbered]
+
+\title{Consequência Lógica} 
+
+\author{
+  Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
+  } 
+ \institute{
+  Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
+\date{\textbf{15 de maio de 2014} }
+
+\logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\AtBeginSection{
+		\begin{frame}{Sumário}%[allowframebreaks]{Sumário}
+    		\tableofcontents[currentsection]
+    		%\tableofcontents[currentsection, hideothersubsections]
+		\end{frame}
+	}
+
+	\begin{frame}{Plano de Aula}
+		\tableofcontents
+		%\tableofcontents[hideallsubsections]
+	\end{frame}
+
+%------------------------------------------
+	\section{Pensamento}
+	\begin{frame}{Pensamento}
+  		\begin{center}
+    		\includegraphics[width=7cm]{images/pensamento.png}
+  		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Pensamento}
+		\begin{columns}
+			\column{.4\textwidth}  		
+		  		\begin{center}
+		    		\includegraphics[height=.6\textheight]{images/pascal.jpg}
+		  		\end{center}
+			\column{.6\textwidth}  		
+				\begin{block}{Frase}
+					\begin{center}
+						{\large A grandeza do homem está em ele se reconhecer como miserável. Uma árvore não se dá conta da sua miséria.}
+					\end{center}
+				\end{block}		  		
+		  		\begin{block}{Quem?}
+		  			\begin{center}
+						{\bf Blaise Pascal (1623-1662)} \\Físico, matemático, teólogo e filósofo francês.
+					\end{center}
+				\end{block}
+		\end{columns}
+	\end{frame}
+	
+	\section{Avisos}
+	\begin{frame}{Avisos}
+		\begin{block}{Lista 03 - Exercícios}
+			\begin{itemize}
+				\item Já disponível no Canvas;
+				\item {\bf Data de Entrega:} 02 de junho (Segunda-feira), até 17h.
+			\end{itemize}
+		\end{block} \pause
+		\begin{block}{Datas importantes}
+			\begin{itemize}
+				\item {\bf Prova 1:} 20 de maio;
+				\item {\bf Teste 2:} 10 de junho;
+			\end{itemize}
+		\end{block}
+	\end{frame}		
+	
+	\begin{frame}{Notícias do Santa Cruz}
+		\begin{center}
+			\includegraphics[width=\textwidth]{images/santa.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------
+	\section{Revisão}	
+	\subsection{Consequência Lógica}
+	\begin{frame}{Consequência Lógica}
+		\begin{block}{$A \models B$}
+			Dizemos que $B$ é {\it consequência lógica} de $A$ (representada por $A \models B$) se toda valoração $\mathcal{V}$ que satisfaz $A$ também satisfaz $B$.
+		\end{block}
+		\begin{block}{$A \models B$}
+			Lê-se $B$ é consequência lógica de $A$, ou $A$ {\it implica logicamente} $B$.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Consequência Lógica}
+		\begin{block}{Verificar se...}
+			$p \vee q \rightarrow r \models p \rightarrow r$ \mbox{   } \pause {\color{green} \bf  V}
+		\end{block}
+		\begin{block}{Verificar se...}
+			$p \wedge q \rightarrow r \models p \rightarrow r$ \mbox{   } \pause {\color{red} \bf F}
+		\end{block}\pause
+		\begin{block}{Logo...}
+			$p \wedge q \rightarrow r \not\models p \rightarrow r$
+		\end{block}
+	\end{frame}
+	
+	\section{Consequência Lógica}
+	\begin{frame}{Consequência Lógica}
+		\begin{block}{Eliminação da dupla negação}
+			$\neg \neg p \models p $ 
+		\end{block} \pause
+		\begin{block}{Introdução da dupla negação}
+			$p \models \neg \neg p $  
+		\end{block}	\pause			
+		\begin{block}{Eliminação do $\wedge$}
+			$p \wedge q \models p $\\
+			$p \wedge q \models q $ 
+		\end{block} \pause
+		\begin{block}{Adição do $\vee$}
+			$p \models p \vee q $
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Consequência Lógica}
+		\begin{block}{\it Modus Ponens}
+			$(p \rightarrow q) \wedge p \models q $
+		\end{block} \pause
+		\begin{block}{\it Modus Tollens}
+			$(p \rightarrow q) \wedge \neg q \models \neg p$
+		\end{block} \pause
+		\begin{block}{Redução ao absurdo}
+			$(p \rightarrow q) \wedge (p \rightarrow \neg q) \models \neg p $
+		\end{block} \pause
+		\begin{block}{Silogismo Disjuntivo}
+			$(p \vee q) \wedge \neg p  \models q $
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Onde estudar mais...}
+		\begin{block}{Seção 1.5: Consequência Lógica}
+			SILVA, F. S. C. Da; FINGER, M.; MELO, A. C. V. de. Em {\bf Lógica para Computação}. São Paulo: Thomson Learning, 2006. \color{blue}{\bf Código Bib.: [519.687 SIL /log]}.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+\end{document}
