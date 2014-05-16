@@ -1,0 +1,210 @@
+\documentclass[xcolor=dvipsnames,table]{beamer}
+ 
+\usepackage{latexsym}
+\usepackage [ansinew]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{fancybox}
+\usepackage{datetime}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{url}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{acronym}
+\usepackage{array}
+
+\newtheorem{definicao}{Definio}
+\newcommand{\tab}{\hspace*{2em}}
+
+\mode<presentation>
+{
+  \definecolor{colortexto}{RGB}{0,0,0}
+  \setbeamertemplate{background canvas}[vertical shading][ bottom=white!10,top=white!10]
+  \setbeamercolor{normal text}{fg=colortexto}
+  \usetheme{Warsaw}
+}
+\setbeamertemplate{caption}[numbered]
+
+\title{Consequência Lógica e Argumentação} 
+
+\author{
+  Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
+  } 
+ \institute{
+  Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
+\date{\textbf{22 de maio de 2014} }
+
+\logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\AtBeginSection{
+		\begin{frame}{Sumário}%[allowframebreaks]{Sumário}
+    		\tableofcontents[currentsection]
+    		%\tableofcontents[currentsection, hideothersubsections]
+		\end{frame}
+	}
+
+	\begin{frame}{Plano de Aula}
+		\tableofcontents
+		%\tableofcontents[hideallsubsections]
+	\end{frame}
+
+%------------------------------------------
+	\section{Pensamento}
+	\begin{frame}{Pensamento}
+  		\begin{center}
+    		\includegraphics[width=7cm]{images/pensamento.png}
+  		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Pensamento}
+		\begin{columns}
+			\column{.4\textwidth}  		
+		  		\begin{center}
+		    		\includegraphics[height=.5\textheight]{images/desconhecido.jpg}
+		  		\end{center}
+			\column{.6\textwidth}  		
+				\begin{block}{Frase}
+					\begin{center}
+						{\large Ter a meta como alvo, mas viver pelo bom senso.}
+					\end{center}
+				\end{block}		  		
+		  		\begin{block}{Quem?}
+		  			\begin{center}
+						{\bf Desconhecido} \\ ***
+					\end{center}
+				\end{block}
+		\end{columns}
+	\end{frame}
+	
+	\section{Avisos}
+	\begin{frame}{Avisos}
+		\begin{block}{Lista 03 - Exercícios}
+			\begin{itemize}
+				\item Já disponível no Canvas;
+				\item {\bf Data de Entrega:} 02 de junho (Segunda-feira), até 17h.
+			\end{itemize}
+		\end{block} \pause
+		\begin{block}{Datas importantes}
+			\begin{itemize}
+				\item {\bf Prova 1:} 20 de maio;
+				\item {\bf Teste 2:} 10 de junho;
+			\end{itemize}
+		\end{block}
+	\end{frame}		
+	
+	\begin{frame}{Notícias do Santa Cruz}
+		\begin{center}
+			\includegraphics[width=\textwidth]{images/santa.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------
+	\section{Revisão}	
+	\begin{frame}{Consequência Lógica}
+		\begin{block}{Eliminação da dupla negação}
+			$\neg \neg p \models p $ 
+		\end{block}
+		\begin{block}{Introdução da dupla negação}
+			$p \models \neg \neg p $  
+		\end{block}			
+		\begin{block}{Eliminação do $\wedge$}
+			$p \wedge q \models p $\\
+			$p \wedge q \models q $ 
+		\end{block} \pause
+		\begin{block}{Adição do $\vee$}
+			$p \models p \vee q $
+		\end{block}
+	\end{frame}
+	
+	\section{Consequência Lógica}
+	\begin{frame}{Consequência Lógica}
+		\begin{block}{\it Modus Ponens}
+			$(p \rightarrow q) \wedge p \models q $
+		\end{block} \pause
+		\begin{block}{\it Modus Tollens}
+			$(p \rightarrow q) \wedge \neg q \models \neg p$
+		\end{block} \pause
+		\begin{block}{Redução ao absurdo}
+			$(p \rightarrow q) \wedge (p \rightarrow \neg q) \models \neg p $
+		\end{block} \pause
+		\begin{block}{Silogismo Disjuntivo}
+			$(p \vee q) \wedge \neg p  \models q $
+		\end{block}
+	\end{frame}
+	
+	\section{Argumentação}
+	\begin{frame}{Argumento}
+		\begin{block}{Argumento}
+			Um argumento pode ser representado em forma simbólica como
+			
+			$p_1 \wedge p_2 \wedge p_3 \wedge \cdots \wedge p_n \models q$ \pause
+			
+			em que $p_1, p_2, p_3 \cdots, p_n$ e $q$ são fórmulas proposicionais.
+		\end{block} \pause
+		\begin{block}{Premissas}
+			Chamamos $p_1, p_2, p_3, \cdots, p_n$ de {\it premissas} (ou {\it hipóteses}) do argumento.
+		\end{block} \pause
+		\begin{block}{Conclusão}
+			Chamamos $q$ de {\it conclusão} do argumento.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Argumento}
+		\begin{block}{Terminologia}
+			\begin{itemize}
+				\item<2,7> $q$ é uma {\it consequência lógica} de $p_1, p_2, p_3, \cdots, p_n$
+				\item<3,7> $q$ pode ser {\it deduzido logicamente} de $p_1, p_2, p_3, \cdots, p_n$
+				\item<4,7> $q$ é uma {\it conclusão lógica} de $p_1, p_2, p_3, \cdots, p_n$
+				\item<5,7> $p_1, p_2, p_3, \cdots, p_n$ {\it implica logicamente} em $q$
+				\item<6,7> $q$ {\it segue logicamente} de $p_1, p_2, p_3, \cdots, p_n$
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Argumento}
+		\begin{block}{Argumento Válido}
+			Um argumento é válido se $p_1 \wedge p_2 \wedge p_3 \wedge \cdots \wedge p_n \models q$ for válida.
+		\end{block} \pause
+		\begin{block}{Exemplos}
+			\begin{itemize}
+				\item<3,7> $p \wedge q \models r$ é um argumento válido?
+				\item<4,7> $p \models p \vee q$ é um argumento válido?
+				\item<5,7> $(p \rightarrow q) \wedge p \models q$ é um argumento válido?
+				\item<6,7> $(p \rightarrow q) \wedge q \models p$ é um argumento válido?
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Argumento}
+		\begin{alert}{Problema}
+			É possível garantir a validade de um argumento sem ter que recorrer à construção de uma tabela-verdade?
+		\end{alert} \pause
+		\begin{block}{Exemplos}
+			\begin{itemize}
+				\item<3,6> $(p \rightarrow q) \wedge (p \wedge r)\models q$ é um argumento válido?
+				\item<4,6> $(p \wedge q) \wedge ((p \vee r) \rightarrow s)) \models p \wedge s $ é um argumento válido?
+				\item<5,6> $(p \rightarrow (q \rightarrow r)) \wedge (p \rightarrow q) \wedge p \models r$ é um argumento válido?
+			\end{itemize}
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Onde estudar mais...}
+		\begin{block}{Seção 1.3: Lógica Proposicional}
+			GERSTING, J. L. Fundamentos Matemáticos para a Ciência da Computação: um tratamento moderno de matemática discreta. Rio de Janeiro: LTC, 2004.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+\end{document}
