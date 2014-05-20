@@ -1,0 +1,68 @@
+\documentclass[11pt,a4paper,oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+
+\author{\\Universidade Federal de Goiás (UFG) - Câmpus Jataí\\Bacharelado em Ciência da Computação \\Lógica para Ciência da Computação \\Esdras Lins Bispo Jr.}
+
+\title{\sc \huge Primeira Prova}
+
+\begin{document}
+
+\maketitle
+
+{\bf ORIENTAÇÕES PARA A RESOLUÇÃO}
+
+\begin{itemize}
+	\item A avaliação é individual, sem consulta (exceto o material contido na própria avaliação);
+	\item A pontuação máxima desta avaliação é 10,0 (dez) pontos, sendo uma das 05 (cinco) componentes que formarão a média final da disciplina: dois testes, duas provas e exercícios;
+	\item A média final será calculada pela média ponderada das cinco supraditas notas [em que o primeiro teste tem peso 20 (vinte), o segundo teste tem peso 10 (dez), a primeira prova tem peso 40 (quarenta), a segunda prova tem peso 30 (trinta) e os exercícios têm peso 10 (dez)];
+	\item O conteúdo exigido compreende os seguintes pontos apresentados no Plano de Ensino da disciplina: (1) Lógica Proposicional, (2) Semântica da Lógica Proposicional, (3) Construção de tabelas-verdade, (4) Implicação lógica e argumento; e (6) Satisfazibilidade.
+\end{itemize}
+
+\begin{center}
+	\fbox{\large Nome: \hspace{10cm}}
+	\fbox{\large Assinatura: \hspace{9cm}}
+\end{center}
+
+\newpage
+
+\begin{enumerate}
+
+	\item (2,5 pt) O conectivo binário $\downarrow$	é definido da seguinte forma:
+		\begin{center}
+			\begin{tabular}{c|c|c}
+			\hline 
+			$p$ & $q$ & $p \downarrow q$ \\ 
+			\hline 
+			0 & 0 & 1 \\ 
+			0 & 1 & 0 \\ 
+			1 & 0 & 0 \\ 
+			1 & 1 & 0 \\ 
+			\hline 
+			\end{tabular} 
+		\end{center}
+		
+		Mostre que $p \vee q \equiv \neg (p \downarrow q)$.
+		
+	\item (2,0 pt) Augustus De Morgan (1806 -1871) foi um matemático e lógico britânico. Foi o primeiro a introduzir o termo e tornar rigorosa a ideia da indução matemática. Ele é bastante conhecido na Lógica por formular duas Leis: 
+
+	\begin{enumerate}
+		\item $\neg(p \wedge q) \equiv \neg p \vee \neg q$ \ \ \ \ \ \ (1,0 pt)
+		\item $\neg(p \vee q) \equiv \neg p \wedge \neg q$ \ \ \ \ \ \ (1,0 pt)
+	\end{enumerate} 
+	
+	Verifique se as duas Leis de De Morgan são válidas.
+	
+	\item (3,5 pt) Classifique a fórmula $(p \wedge q) \vee r \rightarrow p \wedge (q \vee r)$ de acordo com sua satisfazibilidade, validade, falsicabilidade ou insatisfazibiidade.	
+	
+	\item (2,0 pt) Provar ou refutar a consequência lógica $p \rightarrow q \models p \rightarrow q \wedge r$ usando tabela-verdade.
+	
+\end{enumerate}
+
+\end{document}
