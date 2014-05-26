@@ -29,14 +29,14 @@
 }
 \setbeamertemplate{caption}[numbered]
 
-\title{Consequência Lógica e Argumentação} 
+\title{Argumentação} 
 
 \author{
   Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
   } 
  \institute{
   Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
-\date{\textbf{22 de maio de 2014} }
+\date{\textbf{27 de maio de 2014} }
 
 \logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
 
@@ -70,17 +70,17 @@
 		\begin{columns}
 			\column{.4\textwidth}  		
 		  		\begin{center}
-		    		\includegraphics[height=.5\textheight]{images/desconhecido.jpg}
+		    		\includegraphics[height=.6\textheight]{images/dudley.png}
 		  		\end{center}
 			\column{.6\textwidth}  		
 				\begin{block}{Frase}
 					\begin{center}
-						{\large Ter a meta como alvo, mas viver pelo bom senso.}
+						{\large Eu nunca aprendi nada na minha vida através de qualquer homem que tenha concordado comigo.}
 					\end{center}
 				\end{block}		  		
 		  		\begin{block}{Quem?}
 		  			\begin{center}
-						{\bf Desconhecido} \\ ***
+						{\bf Dudley Field Malone (1882-1950)} \\Advogado estadunidense e defensor dos direitos civis.
 					\end{center}
 				\end{block}
 		\end{columns}
@@ -90,13 +90,11 @@
 	\begin{frame}{Avisos}
 		\begin{block}{Lista 03 - Exercícios}
 			\begin{itemize}
-				\item Já disponível no Canvas;
 				\item {\bf Data de Entrega:} 02 de junho (Segunda-feira), até 17h.
 			\end{itemize}
 		\end{block} \pause
 		\begin{block}{Datas importantes}
 			\begin{itemize}
-				\item {\bf Prova 1:} 20 de maio;
 				\item {\bf Teste 2:} 10 de junho;
 			\end{itemize}
 		\end{block}
@@ -110,49 +108,32 @@
 %------------------------------------------
 	\section{Revisão}	
 	\begin{frame}{Consequência Lógica}
-		\begin{block}{Eliminação da dupla negação}
-			$\neg \neg p \models p $ 
-		\end{block}
-		\begin{block}{Introdução da dupla negação}
-			$p \models \neg \neg p $  
-		\end{block}			
-		\begin{block}{Eliminação do $\wedge$}
-			$p \wedge q \models p $\\
-			$p \wedge q \models q $ 
-		\end{block} \pause
-		\begin{block}{Adição do $\vee$}
-			$p \models p \vee q $
-		\end{block}
-	\end{frame}
-	
-	\section{Consequência Lógica (Cont.)}
-	\begin{frame}{Consequência Lógica}
 		\begin{block}{\it Modus Ponens}
 			$(p \rightarrow q) \wedge p \models q $
-		\end{block} \pause
+		\end{block}
 		\begin{block}{\it Modus Tollens}
 			$(p \rightarrow q) \wedge \neg q \models \neg p$
-		\end{block} \pause
+		\end{block}
 		\begin{block}{Redução ao absurdo}
 			$(p \rightarrow q) \wedge (p \rightarrow \neg q) \models \neg p $
-		\end{block} \pause
+		\end{block}
 		\begin{block}{Silogismo Disjuntivo}
 			$(p \vee q) \wedge \neg p  \models q $
 		\end{block}
 	\end{frame}
 	
-	\section{Argumentação}
+	\subsection{Argumentação}
 	\begin{frame}{Argumento}
 		\begin{block}{Argumento}
 			Um argumento pode ser representado em forma simbólica como
 			
-			$p_1 \wedge p_2 \wedge p_3 \wedge \cdots \wedge p_n \models q$ \pause
+			$p_1 \wedge p_2 \wedge p_3 \wedge \cdots \wedge p_n \models q$
 			
 			em que $p_1, p_2, p_3 \cdots, p_n$ e $q$ são fórmulas proposicionais.
-		\end{block} \pause
+		\end{block} 
 		\begin{block}{Premissas}
 			Chamamos $p_1, p_2, p_3, \cdots, p_n$ de {\it premissas} (ou {\it hipóteses}) do argumento.
-		\end{block} \pause
+		\end{block} 
 		\begin{block}{Conclusão}
 			Chamamos $q$ de {\it conclusão} do argumento.
 		\end{block}
@@ -161,11 +142,11 @@
 	\begin{frame}{Argumento}
 		\begin{block}{Terminologia}
 			\begin{itemize}
-				\item<2,7> $q$ é uma {\it consequência lógica} de $p_1, p_2, p_3, \cdots, p_n$
-				\item<3,7> $q$ pode ser {\it deduzido logicamente} de $p_1, p_2, p_3, \cdots, p_n$
-				\item<4,7> $q$ é uma {\it conclusão lógica} de $p_1, p_2, p_3, \cdots, p_n$
-				\item<5,7> $p_1, p_2, p_3, \cdots, p_n$ {\it implica logicamente} em $q$
-				\item<6,7> $q$ {\it segue logicamente} de $p_1, p_2, p_3, \cdots, p_n$
+				\item $q$ é uma {\it consequência lógica} de $p_1, p_2, p_3, \cdots, p_n$
+				\item $q$ pode ser {\it deduzido logicamente} de $p_1, p_2, p_3, \cdots, p_n$
+				\item $q$ é uma {\it conclusão lógica} de $p_1, p_2, p_3, \cdots, p_n$
+				\item $p_1, p_2, p_3, \cdots, p_n$ {\it implica logicamente} em $q$
+				\item $q$ {\it segue logicamente} de $p_1, p_2, p_3, \cdots, p_n$
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -176,24 +157,110 @@
 		\end{block} \pause
 		\begin{block}{Exemplos}
 			\begin{itemize}
-				\item<3,7> $p \wedge q \models r$ é um argumento válido?
-				\item<4,7> $p \models p \vee q$ é um argumento válido?
-				\item<5,7> $(p \rightarrow q) \wedge p \models q$ é um argumento válido?
-				\item<6,7> $(p \rightarrow q) \wedge q \models p$ é um argumento válido?
+				\item $p \wedge q \models r$ é um argumento válido?
+				\item $p \models p \vee q$ é um argumento válido?
+				\item $(p \rightarrow q) \wedge p \models q$ é um argumento válido?
+				\item $(p \rightarrow q) \wedge q \models p$ é um argumento válido?
 			\end{itemize}
 		\end{block}
 	\end{frame}
 	
+	\section{Argumentação (Cont.)}
 	\begin{frame}{Argumento}
 		\begin{alert}{Problema}
 			É possível garantir a validade de um argumento sem ter que recorrer à construção de uma tabela-verdade?
-		\end{alert} \pause
+		\end{alert} 
 		\begin{block}{Exemplos}
 			\begin{itemize}
-				\item<3,6> $(p \rightarrow q) \wedge (p \wedge r)\models q$ é um argumento válido?
-				\item<4,6> $(p \wedge q) \wedge ((p \vee r) \rightarrow s)) \models p \wedge s $ é um argumento válido?
-				\item<5,6> $(p \rightarrow (q \rightarrow r)) \wedge (p \rightarrow q) \wedge p \models r$ é um argumento válido?
+				\item $(p \rightarrow q) \wedge (p \wedge r)\models q$ é um argumento válido?
+				\item $(p \wedge q) \wedge ((p \vee r) \rightarrow s)) \models p \wedge s $ é um argumento válido?
+				\item $(p \rightarrow (q \rightarrow r)) \wedge (p \rightarrow q) \wedge p \models r$ é um argumento válido?
 			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Definição}
+			{\bf Regras de inferência} é uma coleção de consequências lógicas válidas notáveis que podem ser referenciadas em uma determinada demonstração. 
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Introdução da Conjunção ($\wedge i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				(2) & B & \\
+				 & \line(1,0){25} & \\
+				(3) & A \wedge B & \hspace{1cm} \wedge i \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$A \wedge B \models A \wedge B$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Eliminação da Conjunção ($\wedge e$)}
+			\begin{eqnarray*}
+				(1) & A \wedge B & \\
+				 & \line(1,0){25} & \\
+				(2) & A & \hspace{1cm} \wedge e \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$A \wedge B \models A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Eliminação da Conjunção ($\wedge e$)}
+			\begin{eqnarray*}
+				(1) & A \wedge B & \\
+				 & \line(1,0){25} & \\
+				(2) & B & \hspace{1cm} \wedge e \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$A \wedge B \models B$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Eliminação da Dupla Negação ($\neg \neg e$)}
+			\begin{eqnarray*}
+				(1) & \neg \neg A & \\
+				 & \line(1,0){25} & \\
+				(2) & A & \hspace{1cm} \neg \neg e \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$\neg \neg A \models A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Introdução da Dupla Negação ($\neg \neg i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				 & \line(1,0){25} & \\
+				(2) & \neg \neg A & \hspace{1cm} \neg \neg i \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$A \models \neg \neg A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Adição ($\vee i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				 & \line(1,0){25} & \\
+				(2) & A \vee B & \hspace{1cm} \vee i \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$A \models A \vee B$
 		\end{block}
 	\end{frame}	
 	
