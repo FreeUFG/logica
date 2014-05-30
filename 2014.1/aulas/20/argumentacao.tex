@@ -1,0 +1,290 @@
+\documentclass[xcolor=dvipsnames,table]{beamer}
+ 
+\usepackage{latexsym}
+\usepackage [ansinew]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{fancybox}
+\usepackage{datetime}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{url}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{acronym}
+\usepackage{array}
+
+\newtheorem{definicao}{Definio}
+\newcommand{\tab}{\hspace*{2em}}
+
+\mode<presentation>
+{
+  \definecolor{colortexto}{RGB}{0,0,0}
+  \setbeamertemplate{background canvas}[vertical shading][ bottom=white!10,top=white!10]
+  \setbeamercolor{normal text}{fg=colortexto}
+  \usetheme{Warsaw}
+}
+\setbeamertemplate{caption}[numbered]
+
+\title{Argumentação} 
+
+\author{
+  Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
+  } 
+ \institute{
+  Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
+\date{\textbf{29 de maio de 2014} }
+
+\logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\AtBeginSection{
+		\begin{frame}{Sumário}%[allowframebreaks]{Sumário}
+    		\tableofcontents[currentsection]
+    		%\tableofcontents[currentsection, hideothersubsections]
+		\end{frame}
+	}
+
+	\begin{frame}{Plano de Aula}
+		\tableofcontents
+		%\tableofcontents[hideallsubsections]
+	\end{frame}
+
+%------------------------------------------
+	\section{Pensamento}
+	\begin{frame}{Pensamento}
+  		\begin{center}
+    		\includegraphics[width=7cm]{images/pensamento.png}
+  		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Pensamento}
+		\begin{columns}
+			\column{.4\textwidth}  		
+		  		\begin{center}
+		    		\includegraphics[height=.6\textheight]{images/arthur.jpg}
+		  		\end{center}
+			\column{.6\textwidth}  		
+				\begin{block}{Frase}
+					\begin{center}
+						{\large Um insulto supera qualquer argumento.}
+					\end{center}
+				\end{block}		  		
+		  		\begin{block}{Quem?}
+		  			\begin{center}
+						{\bf Arthur Schopenhauer (1788-1860)} \\Filósofo pessimista alemão.
+					\end{center}
+				\end{block}
+		\end{columns}
+	\end{frame}
+	
+	\section{Avisos}
+	\begin{frame}{Avisos}
+		\begin{block}{Lista 03 - Exercícios}
+			\begin{itemize}
+				\item {\bf Data de Entrega:} 02 de junho (Segunda-feira), até 17h.
+			\end{itemize}
+		\end{block}
+		\begin{block}{Datas importantes}
+			\begin{itemize}
+				\item {\bf Teste 2:} 10 de junho;
+			\end{itemize}
+		\end{block}
+	\end{frame}		
+	
+	\begin{frame}{Notícias do Santa Cruz}
+		\begin{center}
+			\includegraphics[width=\textwidth]{images/santa.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------
+	\section{Revisão}	
+	\subsection{Argumentação}
+	\begin{frame}{Argumento}
+		\begin{alert}{Problema}
+			É possível garantir a validade de um argumento sem ter que recorrer à construção de uma tabela-verdade?
+		\end{alert} 
+		\begin{block}{Exemplos}
+			\begin{itemize}
+				\item $(p \rightarrow q) \wedge (p \wedge r)\models q$ é um argumento válido?
+				\item $(p \wedge q) \wedge ((p \vee r) \rightarrow s)) \models p \wedge s $ é um argumento válido?
+				\item $(p \rightarrow (q \rightarrow r)) \wedge (p \rightarrow q) \wedge p \models r$ é um argumento válido?
+			\end{itemize}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Definição}
+			{\bf Regras de inferência} é uma coleção de consequências lógicas válidas notáveis que podem ser referenciadas em uma determinada demonstração. 
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Introdução da Conjunção ($\wedge i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				(2) & B & \\
+				 & \line(1,0){25} & \\
+				(3) & A \wedge B & \hspace{1cm} \wedge i \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} 
+		\begin{block}{Expressão Lógica}
+			$A \wedge B \models A \wedge B$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Eliminação da Conjunção ($\wedge e$)}
+			\begin{eqnarray*}
+				(1) & A \wedge B & \\
+				 & \line(1,0){25} & \\
+				(2) & A & \hspace{1cm} \wedge e \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block}
+		\begin{block}{Expressão Lógica}
+			$A \wedge B \models A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Eliminação da Conjunção ($\wedge e$)}
+			\begin{eqnarray*}
+				(1) & A \wedge B & \\
+				 & \line(1,0){25} & \\
+				(2) & B & \hspace{1cm} \wedge e \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} 
+		\begin{block}{Expressão Lógica}
+			$A \wedge B \models B$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Eliminação da Dupla Negação ($\neg \neg e$)}
+			\begin{eqnarray*}
+				(1) & \neg \neg A & \\
+				 & \line(1,0){25} & \\
+				(2) & A & \hspace{1cm} \neg \neg e \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} 
+		\begin{block}{Expressão Lógica}
+			$\neg \neg A \models A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Introdução da Dupla Negação ($\neg \neg i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				 & \line(1,0){25} & \\
+				(2) & \neg \neg A & \hspace{1cm} \neg \neg i \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} 
+		\begin{block}{Expressão Lógica}
+			$A \models \neg \neg A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Adição ($\vee i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				 & \line(1,0){25} & \\
+				(2) & A \vee B & \hspace{1cm} \vee i \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} 
+		\begin{block}{Expressão Lógica}
+			$A \models A \vee B$
+		\end{block}
+	\end{frame}
+	
+	\section{Argumentação}
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Silogismo Disjuntivo ($SD$)}
+			\begin{eqnarray*}
+				(1) & A \vee B& \\
+				(2) & \neg A& \\
+				 & \line(1,0){25} & \\
+				(3) & B & \hspace{1cm} SD \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$(A \vee B) \wedge \neg A \models B$
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Introdução do Condicional ($\rightarrow i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				(2) & B& \\
+				 & \line(1,0){25} & \\
+				(3) & A \rightarrow B & \hspace{1cm} \rightarrow i \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$A \wedge B \models A \rightarrow B$
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{{\it Modus Ponens} ($\rightarrow e$ ou MP)}
+			\begin{eqnarray*}
+				(1) & A \rightarrow B & \\
+				(2) & A & \\
+				 & \line(1,0){25} & \\
+				(3) & B & \hspace{1cm} MP \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$(A \rightarrow B) \wedge A \models B$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{{\it Modus Tollens} (MT)}
+			\begin{eqnarray*}
+				(1) & A \rightarrow B & \\
+				(2) & \neg B & \\
+				 & \line(1,0){25} & \\
+				(3) & \neg A & \hspace{1cm} MT \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$(A \rightarrow B) \wedge \neg B \models \neg A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Silogismo Hipotético ($SH$)}
+			\begin{eqnarray*}
+				(1) & A \rightarrow B& \\
+				(2) & B \rightarrow C& \\
+				 & \line(1,0){25} & \\
+				(3) & A \rightarrow C & \hspace{1cm} SH \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$(A \rightarrow B) \wedge (B \rightarrow C) \models A \rightarrow C$
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Onde estudar mais...}
+		\begin{block}{Seção 1.3: Lógica Proposicional}
+			GERSTING, J. L. Fundamentos Matemáticos para a Ciência da Computação: um tratamento moderno de matemática discreta. Rio de Janeiro: LTC, 2004.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+\end{document}
