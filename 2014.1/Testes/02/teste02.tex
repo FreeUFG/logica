@@ -1,0 +1,176 @@
+\documentclass[11pt,a4paper,oneside]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{multicol}
+
+\usepackage{xcolor}
+% Definindo novas cores
+\definecolor{verde}{rgb}{0.25,0.5,0.35}
+\definecolor{jpurple}{rgb}{0.5,0,0.35}
+% Configurando layout para mostrar codigos Java
+\usepackage{listings}
+\lstset{
+  language=Java,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{jpurple}\bfseries,
+  stringstyle=\color{red},
+  commentstyle=\color{verde},
+  morecomment=[s][\color{blue}]{/**}{*/},
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false, 
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  backgroundcolor=\color{cyan!10}, 
+  breakautoindent=true, 
+  captionpos=b,
+  xleftmargin=0pt,
+  tabsize=4,
+  escapeinside=||
+}
+
+\author{\\Universidade Federal de Goiás (UFG) - Câmpus Jataí\\Bacharelado em Ciência da Computação \\Lógica para Ciência da Computação \\Esdras Lins Bispo Jr.}
+
+\title{\sc \huge Segundo Teste}
+
+\begin{document}
+
+\maketitle
+
+{\bf ORIENTAÇÕES PARA A RESOLUÇÃO}
+
+\begin{itemize}
+	\item A avaliação é individual, sem consulta;
+	\item A pontuação máxima desta avaliação é 10,0 (dez) pontos, sendo uma das 05 (cinco) componentes que formarão a média final da disciplina: dois testes, duas provas e exercícios;
+	\item A média final será calculada pela média ponderada das cinco supraditas notas [em que o primeiro teste tem peso 20 (vinte), o segundo teste tem peso 10 (dez), a primeira prova tem peso 35 (trinta e cinco), a segunda prova tem peso 25 (vinte e cinco) e os exercícios têm peso 10 (dez)];
+	\item O conteúdo exigido compreende os seguintes pontos apresentados no Plano de Ensino da disciplina: (4) Implicação Lógica e Argumento, (5) Demonstração e Dedução, e (6) Satisfazibilidade.
+\end{itemize}
+
+\begin{center}
+	\fbox{\large Nome: \hspace{10cm}}
+	\fbox{\large Assinatura: \hspace{9cm}}
+\end{center}
+
+\newpage
+
+\begin{enumerate}
+
+	\item (2,0 pt) [ESAF 2012] Conclua o argumento a seguir, marque a alternativa correta e {\bf justifique a sua resposta}. Se Marta é estudante, então Pedro não é professor. Se Pedro não é professor, então Murilo trabalha. Se Murilo trabalha, então hoje não é domingo. Ora, hoje é domingo. Logo,
+	
+		\begin{enumerate}
+			\item Marta não é estudante e Murilo trabalha.
+			\item Marta não é estudante e Murilo não trabalha.
+			\item Marta é estudante ou Murilo trabalha.
+			\item Marta é estudante e Pedro é professor.
+			\item Murilo trabalha e Pedro é professor.
+		\end{enumerate}
+	
+	\item (1,0 pt) Justifique cada passo na sequência de demonstração de $(q \rightarrow r) \wedge (s \vee \neg r) \wedge q\models s$:
+	
+		\begin{eqnarray*}
+			(1) & q \rightarrow r & \\
+			(2) & s \vee \neg r & \\
+			(3) & q & \\
+			(4) & r & \\
+			(5) & s &  
+		\end{eqnarray*}	
+	
+	\item (1,0 pt) Justifique cada passo na sequência de demonstração de $(p \rightarrow s) \wedge (p \rightarrow r) \models p \rightarrow (s \wedge r)$:
+	
+		\begin{eqnarray*}
+			(1) & p \rightarrow s & \\
+			(2) & p \rightarrow r & \\
+			(3) & p & \\
+			(4) & s & \\
+			(5) & r & \\
+			(6) & s \wedge r & 
+		\end{eqnarray*}	
+		
+	\item (6,0 pt) Prove que os argumentos abaixo são válidos através do uso de regras de inferência:
+	
+		\begin{enumerate}
+			\item (2,0 pt) $(p \rightarrow (q \vee r)) \wedge \neg q \wedge \neg r \models \neg p$
+			\item (2,0 pt) $(p \rightarrow (q \rightarrow r)) \wedge (p \vee \neg s) \wedge q \models s \rightarrow r$			
+			\item (2,0 pt) $(p \vee (q \rightarrow p)) \wedge q \models p$
+		\end{enumerate}
+	
+\end{enumerate}
+
+\newpage
+
+{\sc \huge Material de Consulta}
+
+\vspace{2cm}
+
+REGRAS DE INFERÊNCIA
+
+\begin{multicols}{2}
+\begin{itemize}
+	\item {\bf Silogismo Disjuntivo} (SD)
+	\begin{eqnarray*}
+		(1) & p \vee q& \\
+		(2) & \neg p& \\
+		 & \line(1,0){25} & \\
+		(3) & q & \hspace{1cm} SD \mbox{ } (1),(2)
+	\end{eqnarray*}
+	\item {\bf De Morgan} ($DM_\wedge$)
+			\begin{eqnarray*}
+				(1) & \neg p \wedge \neg q & \\
+				 & \line(1,0){25} & \\
+				(2) & \neg (p \vee q) & \hspace{1cm} DM_\wedge \mbox{ } (1)
+			\end{eqnarray*}
+			
+	\item {\bf De Morgan} ($DM_\vee$)
+			\begin{eqnarray*}
+				(1) & \neg p \vee \neg q & \\
+				 & \line(1,0){25} & \\
+				(2) &  \neg (p \wedge q) & \hspace{1cm} DM_\vee \mbox{ } (1)
+			\end{eqnarray*}
+\end{itemize}
+
+\columnbreak
+
+\begin{itemize}
+	\item {\bf Modus Ponens} (MP)
+	\begin{eqnarray*}
+		(1) & p \rightarrow q & \\
+		(2) & p & \\
+		 & \line(1,0){25} & \\
+		(3) & q & \hspace{1cm} MP \mbox{ } (1),(2)
+	\end{eqnarray*}
+	\item {\bf Modus Tollens} (MT)
+			\begin{eqnarray*}
+				(1) & p \rightarrow q & \\
+				(2) & \neg q & \\
+				 & \line(1,0){25} & \\
+				(3) & \neg p & \hspace{1cm} MT \mbox{ } (1),(2)
+			\end{eqnarray*}
+			
+	\item {\bf Contradição} ($\neg e$)
+			\begin{eqnarray*}
+				(1) & p & \\
+				(2) & \neg p & \\
+				 & \line(1,0){25} & \\
+				(3) & \perp & \hspace{1cm} \neg e \mbox{ } (1),(2)
+			\end{eqnarray*}
+\end{itemize}
+\end{multicols}
+
+
+\begin{itemize}	
+	\item {\bf Introdução da Conjunção} ($\wedge i$)
+			\begin{eqnarray*}
+				(1) & p & \\
+				(2) & q & \\
+				 & \line(1,0){25} & \\
+				(3) & p \wedge q & \hspace{1cm} \wedge i \mbox{ } (1),(2)
+			\end{eqnarray*}
+\end{itemize}
+
+\end{document}

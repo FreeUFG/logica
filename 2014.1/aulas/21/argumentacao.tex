@@ -1,0 +1,263 @@
+\documentclass[xcolor=dvipsnames,table]{beamer}
+ 
+\usepackage{latexsym}
+\usepackage [ansinew]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{fancybox}
+\usepackage{datetime}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{url}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{acronym}
+\usepackage{array}
+
+\newtheorem{definicao}{Definio}
+\newcommand{\tab}{\hspace*{2em}}
+
+\mode<presentation>
+{
+  \definecolor{colortexto}{RGB}{0,0,0}
+  \setbeamertemplate{background canvas}[vertical shading][ bottom=white!10,top=white!10]
+  \setbeamercolor{normal text}{fg=colortexto}
+  \usetheme{Warsaw}
+}
+\setbeamertemplate{caption}[numbered]
+
+\title{Argumentação} 
+
+\author{
+  Esdras Lins Bispo Jr. \\ \url{bispojr@ufg.br}
+  } 
+ \institute{
+  Lógica para Ciência da Computação \\Bacharelado em Ciência da Computação}
+\date{\textbf{03 de junho de 2014} }
+
+\logo{\includegraphics[width=1cm]{images/ufgJataiLogo.png}}
+
+\begin{document}
+
+	\begin{frame}
+		\titlepage
+	\end{frame}
+
+	\AtBeginSection{
+		\begin{frame}{Sumário}%[allowframebreaks]{Sumário}
+    		\tableofcontents[currentsection]
+    		%\tableofcontents[currentsection, hideothersubsections]
+		\end{frame}
+	}
+
+	\begin{frame}{Plano de Aula}
+		\tableofcontents
+		%\tableofcontents[hideallsubsections]
+	\end{frame}
+
+%------------------------------------------
+	\section{Pensamento}
+	\begin{frame}{Pensamento}
+  		\begin{center}
+    		\includegraphics[width=7cm]{images/pensamento.png}
+  		\end{center}
+	\end{frame}
+	
+	\begin{frame}{Pensamento}
+		\begin{columns}
+			\column{.4\textwidth}  		
+		  		\begin{center}
+		    		\includegraphics[height=.6\textheight]{images/gandhi.jpg}
+		  		\end{center}
+			\column{.6\textwidth}  		
+				\begin{block}{Frase}
+					\begin{center}
+						{\large O método da não-violência pode parecer demorado, muito demorado, mas eu estou convencido de que é o mais rápido.}
+					\end{center}
+				\end{block}		  		
+		  		\begin{block}{Quem?}
+		  			\begin{center}
+						{\bf Mohandas Gandhi (1869-1948)} \\Advogado e pacifista indiano.
+					\end{center}
+				\end{block}
+		\end{columns}
+	\end{frame}
+	
+	\section{Avisos}
+	\begin{frame}{Avisos}
+		\begin{block}{Datas importantes}
+			\begin{itemize}
+				\item {\bf Teste 2:} 10 de junho;
+			\end{itemize}
+		\end{block}
+	\end{frame}		
+	
+	\begin{frame}{Notícias do Santa Cruz}
+		\begin{center}
+			\includegraphics[width=\textwidth]{images/santa.png}
+		\end{center}
+	\end{frame}
+%------------------------------------------
+	\section{Revisão}	
+	\subsection{Argumentação}
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Silogismo Disjuntivo ($SD$)}
+			\begin{eqnarray*}
+				(1) & A \vee B& \\
+				(2) & \neg A& \\
+				 & \line(1,0){25} & \\
+				(3) & B & \hspace{1cm} SD \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block}
+		\begin{block}{Expressão Lógica}
+			$(A \vee B) \wedge \neg A \models B$
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Introdução do Condicional ($\rightarrow i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				(2) & B& \\
+				 & \line(1,0){25} & \\
+				(3) & A \rightarrow B & \hspace{1cm} \rightarrow i \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block}
+		\begin{block}{Expressão Lógica}
+			$A \wedge B \models A \rightarrow B$
+		\end{block}
+	\end{frame}	
+	
+	\section{Argumentação}
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{{\it Modus Ponens} ($\rightarrow e$ ou MP)}
+			\begin{eqnarray*}
+				(1) & A \rightarrow B & \\
+				(2) & A & \\
+				 & \line(1,0){25} & \\
+				(3) & B & \hspace{1cm} MP \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$(A \rightarrow B) \wedge A \models B$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{{\it Modus Tollens} (MT)}
+			\begin{eqnarray*}
+				(1) & A \rightarrow B & \\
+				(2) & \neg B & \\
+				 & \line(1,0){25} & \\
+				(3) & \neg A & \hspace{1cm} MT \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$(A \rightarrow B) \wedge \neg B \models \neg A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Silogismo Hipotético ($SH$)}
+			\begin{eqnarray*}
+				(1) & A \rightarrow B& \\
+				(2) & B \rightarrow C& \\
+				 & \line(1,0){25} & \\
+				(3) & A \rightarrow C & \hspace{1cm} SH \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$(A \rightarrow B) \wedge (B \rightarrow C) \models A \rightarrow C$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Contradição ($\neg e$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				(2) & \neg A & \\
+				 & \line(1,0){25} & \\
+				(3) & \perp & \hspace{1cm} \neg e \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$A \wedge \neg A \models \perp$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{Introdução da Negação ($\neg i$)}
+			\begin{eqnarray*}
+				(1) & A & \\
+				(2) & \perp & \\
+				 & \line(1,0){25} & \\
+				(3) & \neg A & \hspace{1cm} \neg i \mbox{ } (1),(2)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$A \wedge \perp \models \neg A$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{De Morgan ($DM_\vee$)}
+			\begin{eqnarray*}
+				(1) & \neg (A \vee B) & \\
+				 & \line(1,0){25} & \\
+				(2) & \neg A \wedge \neg B & \hspace{1cm} DM_\vee \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$\neg (A \vee B) \models \neg A \wedge \neg B$
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Regras de Inferência}
+		\begin{block}{De Morgan ($DM_\wedge$)}
+			\begin{eqnarray*}
+				(1) & \neg (A \wedge B) & \\
+				 & \line(1,0){25} & \\
+				(2) & \neg A \vee \neg B & \hspace{1cm} DM_\wedge \mbox{ } (1)
+			\end{eqnarray*}
+		\end{block} \pause
+		\begin{block}{Expressão Lógica}
+			$\neg (A \wedge B) \models \neg A \vee \neg B$
+		\end{block}
+	\end{frame}
+
+	\begin{frame}{Demonstração por Absurdo}
+		\begin{block}{Definição}
+			Utilizada como uma alternativa à demonstração direta. Consiste em apresentar um absurdo diante da negação da conclusão como premissa.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}{Demonstração por Absurdo}
+		\begin{block}{Argumento}
+			$p \models p \vee q$
+		\end{block}
+		\begin{block}{Demonstração}
+			\begin{eqnarray*}
+				(1) & p & \\
+				(2) & \neg (p \vee q) & \\ 
+				 & \line(1,0){25} & \\ \pause
+				(3) & \neg p \wedge \neg q & \hspace{1cm} DM_\wedge \mbox{ } (2) \pause \\
+				(4) & \neg p & \hspace{1cm} \wedge e \mbox{ } (3) \pause \\
+				(5) & \perp & \hspace{1cm} \neg e \mbox{ } (1),(4)
+			\end{eqnarray*}
+		\end{block}
+	\end{frame}	
+	
+	\begin{frame}{Onde estudar mais...}
+		\begin{block}{Seção 1.3: Lógica Proposicional}
+			GERSTING, J. L. Fundamentos Matemáticos para a Ciência da Computação: um tratamento moderno de matemática discreta. Rio de Janeiro: LTC, 2004.
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+\end{document}
